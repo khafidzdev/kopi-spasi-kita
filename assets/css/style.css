@@ -175,13 +175,7 @@
     padding: 20px;
     text-align: center;
   }
-  .menu-btn {
-    width: 30px;
-    height: 25px;
-  }
-  .overlay a {
-    font-size: 1.3rem;
-  }
+ 
 }
 
 @media (max-width: 480px) {
@@ -189,11 +183,10 @@
     width: 50%;
     padding: 15px;
   }
-  .menu-btn {
-    width: 25px;
-    height: 20px;
+  .about-text h2 {
+    font-size: 20px; /* Menyesuaikan ukuran judul */
   }
-  .overlay a {
-    font-size: 1.1rem;
+  .about-text p {
+    font-size: 13px; /* Menyesuaikan ukuran teks */
   }
 }
