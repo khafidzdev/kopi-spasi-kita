@@ -2,12 +2,9 @@
 .navbar {
   background-color: white;
   padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 .navbar-brand img {
-  height: 70px; /* Ukuran lebih fleksibel */
+  height: 85px;
   margin-left: 20px;
 }
 
@@ -23,7 +20,6 @@
   border: none;
   z-index: 1000;
   position: relative;
-  margin-right: 20px;
 }
 .menu-btn span {
   display: block;
@@ -36,7 +32,7 @@
 
 /* Efek Hamburger ke X */
 .menu-btn.active span {
-  background: white;
+  background: white; /* Warna putih saat aktif */
 }
 .menu-btn.active span:nth-child(1) {
   transform: translateY(11px) rotate(45deg);
@@ -52,9 +48,8 @@
 .overlay {
   position: fixed;
   top: 0;
-  right: -50%; /* Mulai dari luar layar */
-  width: 50%; /* Default setengah layar di desktop */
-  max-width: 400px; /* Batas maksimum */
+  right: -44%; /* Mulai dari luar layar */
+  width: 44%; /* Hanya sepertiga layar */
   height: 100%;
   background: rgba(0, 0, 0, 0.9);
   display: flex;
@@ -70,7 +65,7 @@
 
 /* Saat Menu Aktif */
 .overlay.active {
-  right: 0;
+  right: 0; /* Geser masuk ke layar */
   opacity: 1;
   visibility: visible;
 }
@@ -87,106 +82,17 @@
 .overlay a:hover {
   color: #ff7f7f;
 }
-
-/* Section About */
-.about-container {
+/* Video Section */
+.video-container {
   position: relative;
-  width: 80%;
-  max-width: 900px;
-  margin: 50px auto;
-  display: flex;
-  margin-left: 13%;
+  width: 100%;
+  height: auto; /* Atur sesuai dengan tinggi yang diinginkan */
+  overflow: hidden;
 }
 
-.about-image {
-  width: 75%;
-  height: auto;
-  display: block;
-}
-
-.about-text {
-  position: absolute;
-  top: 50%;
-  right: -15%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.95);
-  padding: 30px;
-  width: 45%;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-  text-align: left;
-  height: auto;
-}
-
-.about-text h2 {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.about-text p {
-  font-size: 16px;
-  color: #333;
-}
-
-.about-btn {
-  background: transparent;
-  border: 2px solid black;
-  padding: 10px 15px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.about-btn:hover {
-  background: black;
-  color: white;
-}
-
-/* Responsif */
-@media (max-width: 1024px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .menu-btn {
-    margin-right: 10px;
-  }
-
-  .overlay {
-    width: 60%;
-  }
-
-  .about-container {
-    flex-direction: column;
-    margin-left: 0;
-    align-items: center;
-  }
-  .about-image {
-    width: 80%;
-  }
-
-  .about-text {
-    left: 50%;
-    width: 80%;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-text {
-    width: 50%;
-    padding: 20px;
-    text-align: center;
-  }
- 
-}
-
-@media (max-width: 480px) {
-  .about-text {
-    width: 50%;
-    padding: 15px;
-  }
-  .about-text h2 {
-    font-size: 20px; /* Menyesuaikan ukuran judul */
-  }
-  .about-text p {
-    font-size: 13px; /* Menyesuaikan ukuran teks */
-  }
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 }
