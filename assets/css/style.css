@@ -47,8 +47,8 @@
 .overlay {
   position: fixed;
   top: 0;
-  right: -33%; /* Mulai dari luar layar */
-  width: 33%; /* Hanya sepertiga layar */
+  right: -44%; /* Mulai dari luar layar */
+  width: 44%; /* Hanya sepertiga layar */
   height: 100%;
   background: rgba(0, 0, 0, 0.9);
   display: flex;
