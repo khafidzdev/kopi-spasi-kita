@@ -1,0 +1,186 @@
+/* ---- General Styles for .about-section and its content ---- */
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+}
+
+/* Wrapper umum */
+.about-wrapper {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+}
+
+/* Gambar Kiri */
+.about-image.left {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 75%;
+    height: 400px;
+    background: url('../img/cafe.jpg') no-repeat center center/cover;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+/* Gambar Kanan */
+.about-image.right {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 75%;
+    height: 400px;
+    background: url('../img/cafe.jpg') no-repeat center center/cover;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+/* Kotak Teks */
+.about-text {
+    position: relative;
+    background-color: #f8f8f8;
+    padding: 40px;
+    height: 400px;
+    width: 50%;
+    z-index: 2;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    
+    /* Menengahkan teks */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-text-2 {
+    position: relative;
+    background-color: #f8f8f8;
+    padding: 40px;
+    height: 400px;
+    width: 50%;
+    z-index: 2;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    
+    /* Menengahkan teks */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Section Pertama → Lebih ke kanan */
+.about-wrapper:first-child {
+    margin-left: 80px;
+}
+
+/* Section Kedua → Lebih ke kiri */
+.about-wrapper.reverse {
+    margin-right: 80px;
+}
+
+/* Teks Kanan */
+.about-wrapper .about-text {
+    margin-left: auto;
+}
+
+/* Teks Kiri */
+.about-wrapper.reverse .about-text {
+    margin-right: auto;
+}
+
+/* Heading dan Paragraph */
+.about-text h2, .about-text-2 h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.about-text p, .about-text-2 p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.btn-outline-dark {
+    padding: 10px 20px;
+    border: 2px solid #000;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    align-self: center;
+    border-radius: 0 !important;
+}
+
+.btn-outline-dark:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* 🔹 Responsif untuk layar tablet (max-width: 992px) */
+@media (max-width: 992px) {
+    .about-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+    }
+
+    .about-image {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        transform: none;
+    }
+
+    .about-text, .about-text-2 {
+        width: 100%;
+        height: auto;
+        padding: 30px;
+        margin: 0;
+    }
+    .about-image.left, .about-image.right {
+        width: 100%;
+        height: 300px;
+        transform: none;
+    }
+}
+
+/* 🔹 Responsif untuk layar HP (max-width: 600px) */
+@media (max-width: 600px) {
+    .about-section {
+        padding: 40px 0;
+    }
+
+    .about-text, .about-text-2 {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .about-text h2, .about-text-2 h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-text p, .about-text-2 p {
+        font-size: 0.9rem;
+    }
+
+    .btn-outline-dark {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    /* Mengatur gambar agar lebih responsif di ponsel */
+    .about-image {
+        width: 100%;
+        height: 250px;
+    }
+
+    .about-wrapper {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Menyesuaikan lebar tombol */
+    .btn-outline-dark {
+        width: auto;
+    }
+}
