@@ -1,7 +1,7 @@
-const menuBtn = document.getElementById("menuBtn");
-const menuOverlay = document.getElementById("menuOverlay");
+document.getElementById("menuBtn").addEventListener("click", function() {
+    document.body.classList.toggle("no-scroll");
+});
 
-menuBtn.addEventListener("click", function() {
-    menuBtn.classList.toggle("active");
-    menuOverlay.classList.toggle("active");
+document.getElementById("menuOverlay").addEventListener("click", function() {
+    document.body.classList.remove("no-scroll");
 });
