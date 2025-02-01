@@ -202,9 +202,8 @@ video {
   /* Ukuran link overlay */
   .overlay a {
       font-size: 16px;
-      padding: 4px 0;
-      margin: 2px 0;
-  }
+width: 35%;
+    }
 
   /* Social Media */
   .social-media-overlay {
