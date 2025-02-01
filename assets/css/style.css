@@ -44,7 +44,7 @@ html, body {
   cursor: pointer;
   background: none;
   border: none;
-  z-index: 1000;
+  z-index: 1001; /* Memastikan tombol hamburger berada di atas */
   position: relative;
 }
 .menu-btn span {
@@ -74,21 +74,25 @@ html, body {
 .overlay {
   position: fixed;
   top: 0;
-  right: -70%; /* Memastikan menu mulai dari luar layar */
-  width: 70%; /* Lebih besar untuk mobile */
+  right: -100%; /* Memastikan menu mulai dari luar layar */
+  width: 75%; /* Ukuran overlay untuk mobile */
   height: 100%;
   background: rgba(0, 0, 0, 0.9);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start; /* Menyusun elemen mulai dari atas */
+  justify-content: flex-start; /* Rata kiri */
   flex-direction: column;
   z-index: 999;
-  
+  padding-top: 40px; /* Memberikan ruang di atas */
   opacity: 0;
   visibility: hidden;
   transition: right 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
 }
-
+.separator {
+  border: 0;
+  border-top: 1px solid #ffffff; /* Garis pemisah horizontal */
+  margin: 10px 0; /* Menambahkan jarak atas dan bawah */
+}
 /* Saat Menu Aktif */
 .overlay.active {
   right: 0; /* Geser masuk ke layar */
@@ -102,9 +106,10 @@ html, body {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  margin: 15px 0;
+  padding-left: 30px; /* Memberikan sedikit ruang kiri */
   transition: 0.3s;
 }
+
 .overlay a:hover {
   color: #ff7f7f;
 }
@@ -194,7 +199,7 @@ video {
 
 /* Media Query untuk Mobile */
 @media (max-width: 768px) {
-  /* Atur ukuran link overlay */
+  /* Ukuran link overlay */
   .overlay a {
       font-size: 16px;
       padding: 4px 0;
@@ -211,7 +216,22 @@ video {
       margin: 0 8px;
   }
 }
-.no-scroll {
-  overflow: hidden !important;
-  height: 100vh;
+
+/* Media Query untuk Desktop */
+@media (min-width: 769px) {
+  /* Menu Overlay untuk desktop lebih sempit */
+  .overlay {
+    width: 35%; /* Overlay lebih sempit untuk desktop */
+    padding-top: 85px; /* Ruang lebih kecil di atas */
+  }
+
+  /* Mengurangi ukuran link dan memberi jarak lebih besar */
+  .overlay a {
+    font-size: 1.8rem;
+  }
+}
+.gr{
+  border:none;
+  border-top : 1px  solid #ccc;
+  margin: 20px 0;
 }
