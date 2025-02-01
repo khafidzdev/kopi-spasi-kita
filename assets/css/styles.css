@@ -119,44 +119,31 @@
 }
 
 /* Menghindari scroll horizontal */
-/* Menghindari scroll horizontal */
-
-/* Menghindari scroll horizontal */
 html, body {
-    overflow-x: hidden;  /* Pastikan tidak ada scroll horizontal */
+    overflow-x: hidden;
     width: 100%;
-    margin: 0;
-    box-sizing: border-box; /* Pastikan semua elemen mengikuti aturan box-sizing */
 }
 
-/* Mengatur lebar wrapper dan elemen agar tidak melebihi layar */
-.about-wrapper, .about-text, .about-text-2, .about-image {
-    width: 100%;  /* Memastikan elemen mengikuti lebar layar */
-    box-sizing: border-box; /* Pastikan padding dan margin tidak menyebabkan overflow */
-}
-
-/* Responsif untuk perangkat mobile */
+/* Responsif untuk layar HP */
 @media (max-width: 600px) {
     .about-wrapper {
-        width: 100%;
+        width: 100%;  /* Memastikan wrapper tidak lebih besar dari layar */
         margin: 0;
         flex-direction: column;
     }
 
     .about-image {
-        width: 100%;  /* Pastikan gambar memenuhi lebar layar */
+        width: 100%;  /* Memastikan gambar memenuhi lebar layar */
         height: auto;
-        max-width: 100%;  /* Pastikan gambar tidak melampaui batas */
+        border-radius: 8px;
     }
 
-    /* Teks */
     .about-text, .about-text-2 {
-        width: 90%;  /* Pastikan teks tidak melampaui lebar layar */
+        width: 90%;  /* Memastikan teks tidak melampaui lebar layar */
         margin: 0 auto;
     }
 
-    /* Tombol */
     .btn-outline-dark {
-        width: auto;
+        width: auto;  /* Tombol menyesuaikan dengan lebar teks */
     }
 }
