@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     padding: 80px 0;
+    flex-wrap: wrap; /* Menambahkan flex-wrap agar konten tidak terpotong pada layar kecil */
 }
 
 /* Wrapper umum */
@@ -11,61 +12,44 @@
     position: relative;
     width: 80%;
     max-width: 900px;
+    display: flex;
+    flex-wrap: wrap; /* Membuat wrapper bisa membungkus konten */
+}
+
+/* Gambar Kiri */
+.about-image.left,
+.about-image.right {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease-in-out; /* Menambahkan transisi untuk efek perubahan responsif */
 }
 
 /* Gambar Kiri */
 .about-image.left {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 75%;
-    height: 400px;
-    background: url('../img/cafe.jpg') no-repeat center center/cover;
-    transform: translateY(-50%);
-    z-index: 1;
+    background-image: url('../img/cafe.jpg');
 }
 
 /* Gambar Kanan */
 .about-image.right {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    width: 75%;
-    height: 400px;
-    background: url('../img/cafe.jpg') no-repeat center center/cover;
-    transform: translateY(-50%);
-    z-index: 1;
+    background-image: url('../img/cafe.jpg');
 }
 
 /* Kotak Teks */
-.about-text {
-    position: relative;
-    background-color: #f8f8f8;
-    padding: 40px;
-    height: 400px;
-    width: 50%;
-    z-index: 2;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    
-    /* Menengahkan teks */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
+.about-text,
 .about-text-2 {
     position: relative;
     background-color: #f8f8f8;
     padding: 40px;
-    height: 400px;
-    width: 50%;
-    z-index: 2;
+    width: 100%; /* Membuat kotak teks menyesuaikan lebar pada perangkat kecil */
+    height: auto;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    
-    /* Menengahkan teks */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: left;
 }
 
 /* Section Pertama → Lebih ke kanan */
@@ -108,6 +92,7 @@
     transition: all 0.3s ease-in-out;
     align-self: center;
     border-radius: 0 !important;
+    display: inline-block;
 }
 
 .btn-outline-dark:hover {
@@ -124,23 +109,18 @@
         margin: 0;
     }
 
-    .about-image {
-        position: relative;
-        width: 100%;
-        height: 300px;
-        transform: none;
+    .about-text, .about-text-2 {
+        width: 90%; /* Mengatur lebar agar lebih responsif pada tablet */
+        padding: 30px;
+        height: auto;
     }
 
-    .about-text, .about-text-2 {
-        width: 100%;
-        height: auto;
-        padding: 30px;
-        margin: 0;
-    }
-    .about-image.left, .about-image.right {
+    .about-image.left,
+    .about-image.right {
         width: 100%;
         height: 300px;
         transform: none;
+        margin-bottom: 20px; /* Menambahkan jarak antar gambar */
     }
 }
 
@@ -166,12 +146,13 @@
     .btn-outline-dark {
         padding: 8px 16px;
         font-size: 0.9rem;
+        width: auto;
     }
 
     /* Mengatur gambar agar lebih responsif di ponsel */
-    .about-image {
-        width: 100%;
-        height: 250px;
+    .about-image.left,
+    .about-image.right {
+        height: 250px; /* Ukuran lebih kecil untuk ponsel */
     }
 
     .about-wrapper {
