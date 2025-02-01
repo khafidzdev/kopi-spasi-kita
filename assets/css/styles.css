@@ -1,10 +1,12 @@
 /* ---- General Styles for .about-section and its content ---- */
+/* ---- General Styles ---- */
+
+
 .about-section {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 80px 0;
-    flex-wrap: wrap; /* Menambahkan flex-wrap agar konten tidak terpotong pada layar kecil */
 }
 
 /* Wrapper umum */
@@ -12,44 +14,61 @@
     position: relative;
     width: 80%;
     max-width: 900px;
-    display: flex;
-    flex-wrap: wrap; /* Membuat wrapper bisa membungkus konten */
-}
-
-/* Gambar Kiri */
-.about-image.left,
-.about-image.right {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-    transition: all 0.3s ease-in-out; /* Menambahkan transisi untuk efek perubahan responsif */
 }
 
 /* Gambar Kiri */
 .about-image.left {
-    background-image: url('../img/cafe.jpg');
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 65%;
+    height: 400px;
+    background: url('../img/cafe.jpg') no-repeat center center/cover;
+    transform: translateY(-50%);
+    z-index: 1;
 }
 
 /* Gambar Kanan */
 .about-image.right {
-    background-image: url('../img/cafe.jpg');
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 65%;
+    height: 400px;
+    background: url('../img/cafe.jpg') no-repeat center center/cover;
+    transform: translateY(-50%);
+    z-index: 1;
 }
 
 /* Kotak Teks */
-.about-text,
+.about-text {
+    position: relative;
+    background-color: #f8f8f8;
+    padding: 40px;
+    height: 300px;
+    width: 50%;
+    z-index: 2;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    
+    /* Menengahkan teks */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .about-text-2 {
     position: relative;
     background-color: #f8f8f8;
     padding: 40px;
-    width: 100%; /* Membuat kotak teks menyesuaikan lebar pada perangkat kecil */
-    height: auto;
+    height: 300px;
+    width: 50%;
+    z-index: 2;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    
+    /* Menengahkan teks */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: left;
 }
 
 /* Section Pertama → Lebih ke kanan */
@@ -92,7 +111,6 @@
     transition: all 0.3s ease-in-out;
     align-self: center;
     border-radius: 0 !important;
-    display: inline-block;
 }
 
 .btn-outline-dark:hover {
@@ -100,67 +118,44 @@
     color: #fff;
 }
 
-/* 🔹 Responsif untuk layar tablet (max-width: 992px) */
-@media (max-width: 992px) {
-    .about-wrapper {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin: 0;
-    }
+/* Menghindari scroll horizontal */
+/* Menghindari scroll horizontal */
 
-    .about-text, .about-text-2 {
-        width: 90%; /* Mengatur lebar agar lebih responsif pada tablet */
-        padding: 30px;
-        height: auto;
-    }
-
-    .about-image.left,
-    .about-image.right {
-        width: 100%;
-        height: 300px;
-        transform: none;
-        margin-bottom: 20px; /* Menambahkan jarak antar gambar */
-    }
+/* Menghindari scroll horizontal */
+html, body {
+    overflow-x: hidden;  /* Pastikan tidak ada scroll horizontal */
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box; /* Pastikan semua elemen mengikuti aturan box-sizing */
 }
 
-/* 🔹 Responsif untuk layar HP (max-width: 600px) */
+/* Mengatur lebar wrapper dan elemen agar tidak melebihi layar */
+.about-wrapper, .about-text, .about-text-2, .about-image {
+    width: 100%;  /* Memastikan elemen mengikuti lebar layar */
+    box-sizing: border-box; /* Pastikan padding dan margin tidak menyebabkan overflow */
+}
+
+/* Responsif untuk perangkat mobile */
 @media (max-width: 600px) {
-    .about-section {
-        padding: 40px 0;
-    }
-
-    .about-text, .about-text-2 {
-        padding: 20px;
-        width: 90%;
-    }
-
-    .about-text h2, .about-text-2 h2 {
-        font-size: 1.5rem;
-    }
-
-    .about-text p, .about-text-2 p {
-        font-size: 0.9rem;
-    }
-
-    .btn-outline-dark {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-        width: auto;
-    }
-
-    /* Mengatur gambar agar lebih responsif di ponsel */
-    .about-image.left,
-    .about-image.right {
-        height: 250px; /* Ukuran lebih kecil untuk ponsel */
-    }
-
     .about-wrapper {
         width: 100%;
-        margin-bottom: 20px;
+        margin: 0;
+        flex-direction: column;
     }
 
-    /* Menyesuaikan lebar tombol */
+    .about-image {
+        width: 100%;  /* Pastikan gambar memenuhi lebar layar */
+        height: auto;
+        max-width: 100%;  /* Pastikan gambar tidak melampaui batas */
+    }
+
+    /* Teks */
+    .about-text, .about-text-2 {
+        width: 90%;  /* Pastikan teks tidak melampaui lebar layar */
+        margin: 0 auto;
+    }
+
+    /* Tombol */
     .btn-outline-dark {
         width: auto;
     }
