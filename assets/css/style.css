@@ -27,6 +27,10 @@
 }
 
 /* Tombol Hamburger */
+.footer-text {
+  font-size: 15px;
+  margin-bottom: 0;
+}
 
 .menu-btn {
   width: 35px;
