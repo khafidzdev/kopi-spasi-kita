@@ -6,7 +6,8 @@
     <title>Warung Spasi</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <!-- Menambahkan Font Awesome untuk ikon sosial media -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -31,17 +32,38 @@
     <a href="#">MENU</a>
     <a href="#">PRODUK</a>
     <a href="#">CONTACT</a>
+    <a href="#" class="login-btn">LOGIN</a> <!-- Tambah Login -->
+
+    <!-- Ikon Sosial Media di bagian bawah -->
+    <div class="social-media-overlay">
+        <a href="#" class="text-white me-3">
+            <i class="fab fa-facebook fa-2x"></i>
+        </a>
+        <a href="#" class="text-white">
+            <i class="fab fa-instagram fa-2x"></i>
+        </a>
+    </div>
 </div>
 
 
-
-
+<!-- Video Container dengan teks di tengah -->
 <div class="video-container">
     <video autoplay loop muted>
         <source src="assets/img/Satisfying Espresso Workflow ASMR.mp4" type="video/mp4">
         Browser Anda tidak mendukung video.
     </video>
+    <div class="video-text">
+        <h1 class="typing">Warung Spasi</h1>
+        <p>EAT, TEA, REPEAT</p>
+    </div>
 </div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container d-flex justify-content-between align-items-center">
+        <p class="mb-0" style="font-size: 15px;">&copy; 2025 Warung Spasi. All rights reserved.</p>
+    </div>
+</footer>
 
 <script src="assets/js/script.js"></script>
 
