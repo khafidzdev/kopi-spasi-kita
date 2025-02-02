@@ -230,7 +230,7 @@ width: 35%;
   /* Social Media */
   .social-media-overlay {
       bottom: 10px;
-      gap: 5px; /* Mengurangi jarak antar ikon di mobile */
+      gap: 2px; /* Mengurangi jarak antar ikon di mobile */
       justify-content: center; /* Menyusun ikon di tengah */
   }
 
