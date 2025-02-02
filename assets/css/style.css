@@ -219,8 +219,8 @@ video {
 @media (max-width: 768px) {
   /* Ukuran link overlay */
   .overlay a {
-      font-size: 20px;
-width: 35%;
+    font-size: 1.25rem;
+    width: 35%;
 
     }
     .overlay {
@@ -235,7 +235,7 @@ width: 35%;
   }
 
   .social-media-overlay a i {
-      font-size: 18px;
+    font-size: 1.25rem;
   }
 }
 
@@ -305,9 +305,8 @@ h2 {
 }
 
 .menu-img {
-  width: 150px;  /* Ukuran gambar */
-  height: auto;
-  border-radius: 10px;
+  width: 250px;  /* Ukuran gambar */
+  height: 200px;
   margin-right: 15px; /* Beri jarak dengan teks */
 }
 
