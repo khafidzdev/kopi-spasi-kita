@@ -31,47 +31,152 @@
     <a href="menu.html">MENU</a>
     <a href="shop.html">SHOP</a>
     <a href="contact.html">CONTACT</a>
-    <a href="reservasi.html">RESERVASI</a>
+        <a href="reservasi.html">RESERVASI</a>
+
     <hr class="separator">
     <a href="404.html" class="login-btn">LOGIN</a>
     <div class="social-media-overlay">
         <a href="#" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="#" title="Twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-
+        <a href="#" title="Twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
         <a href="#" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
     </div>
 </div>
-<br>
-<br>
-<br><br>
-<!-- OUR MENU -->
-<div class="col-md-6">
-    <h2 class="fw-bold">RESERVASI</h2>
-    <p>Pesan tempat sekarang untuk pengalaman terbaik.</p>
-    <form>
-        <div class="mb-3">
-            <label for="fullname" class="form-label">Nama Lengkap</label>
-            <input type="text" class="form-control" id="fullname" required>
+<br><br><br><br>
+
+
+        
+<div class="container mt-5 py-5">
+    <div class="row">
+        <!-- Informasi Kontak -->
+        <div class="col-md-6">
+            <h2 class="fw-bold">Hubungi Kami</h2>
+
+            <div class="contact-info">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-text">
+                    <h5>ALAMAT</h5>
+                    <p>
+                        Jl. Waru No.11, Mintaragen, Kec. Tegal Tim., Kota Tegal, Jawa Tengah 52121</p>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="contact-text">
+                    <h5>WHATSAPP</h5>
+                    <p><a href="https://wa.me/62895378168939">+62 895-3781-68939</a> | Barista</p>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-text">
+                    <h5>E-MAIL</h5>
+                    <p><a href="mailto:Warungspasi@gmail.com">Warungspasi@gmail.com</a></p>
+                </div>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="phone" class="form-label">Nomor Telepon</label>
-            <input type="tel" class="form-control" id="phone" required>
+        <!-- Formulir Kontak -->
+        <div class="col-md-6">
+            <h2 class="fw-bold">Contact Us</h2>
+            <form>
+                <div class="row">
+                    <div class=" mb-3">
+                        <input type="text" class="form-control border-0 shadow-sm" placeholder="Your Name" required>
+                    </div>
+                
+                </div>
+               
+                <div class="mb-3">
+                    <textarea class="form-control border-0 shadow-sm" rows="4" placeholder="Message" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <input type="date" class="form-control border-0 shadow-sm" placeholder="" required>
+                </div>
+                <div class="mb-3">
+                    <input type="time" class="form-control border-0 shadow-sm" placeholder="" required>
+                </div>
+                <button class="btn btn-danger w-100 fw-bold" type="submit">SEND MESSAGE</button>
+            </form>
         </div>
-        <div class="mb-3">
-            <label for="date" class="form-label">Tanggal Reservasi</label>
-            <input type="date" class="form-control" id="date" required>
-        </div>
-        <div class="mb-3">
-            <label for="time" class="form-label">Waktu Reservasi</label>
-            <input type="time" class="form-control" id="time" required>
-        </div>
-        <button class="btn btn-outline-dark" type="submit">Reservasi</button>
-    </form>
+    </div>
 </div>
-</div>
-</div>
-<br>
- 
+
+<style>
+    .map-container {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+    }
+    .map-container iframe {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+    .form-control {
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .btn-danger {
+        border-radius: 0;
+    }
+     .contact-section {
+            padding: 50px 0;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #e74c3c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #e74c3c;
+            margin-right: 15px;
+        }
+
+        .contact-text h5 {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .contact-text p {
+            margin: 0;
+            color: #555;
+        }
+
+        .contact-text a {
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-text a:hover {
+            text-decoration: underline;
+        }
+</style>
+
+
+
+        <!-- Reservation Form -->
+
 <footer class="footer py-5">
     <div class="container text-center">
         <div class="row">
@@ -86,12 +191,12 @@
                 <p>Monday — Friday <br> <strong>7.30am — 4.30pm</strong></p>
                 <p>Saturday <br> <strong>8am — 5pm</strong></p>
                 <p>Sunday <br> <strong>9am — 5pm</strong></p>
-                <p class="mt-4">&copy;Warungspasi></p>
+                <p class="mt-4">&copy;Warung Spasi</p>
             </div>
             <div class="col-md-4">
                 <h5 class="fw-bold">CONTACT</h5>
                 <p>Email:</p>
-                <p><a href="mailto:info@prufrockcoffee.com" class="text-dark">info@Warungspasi.com</a></p>
+                <p><a href="mailto:info@Warungspasi.com" class="text-dark">info@Warungspasi.com</a></p>
                 <button class="btn btn-outline-dark">Contact us</button>
                 <div class="social-icons mt-3">
                     <a href="#" class="text-dark me-2" title="Facebook" aria-label="Facebook">
@@ -112,6 +217,29 @@
 <script src="assets/js/script.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
-
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
