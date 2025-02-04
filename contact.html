@@ -43,30 +43,136 @@
 </div>
 <br><br><br><br>
 
-<!-- CONTACT & RESERVATION SECTION -->
-<div class="container mt-5">
+
+        
+<div class="container mt-5 py-5">
     <div class="row">
-        <!-- Contact Form -->
+        <!-- Informasi Kontak -->
         <div class="col-md-6">
-            <h2 class="fw-bold">CONTACT US</h2>
-            <p>Hubungi kami untuk informasi lebih lanjut.</p>
+            <h2 class="fw-bold">Hubungi Kami</h2>
+
+            <div class="contact-info">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-text">
+                    <h5>ALAMAT</h5>
+                    <p>
+                        Jl. Waru No.11, Mintaragen, Kec. Tegal Tim., Kota Tegal, Jawa Tengah 52121</p>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="contact-text">
+                    <h5>WHATSAPP</h5>
+                    <p><a href="https://wa.me/62895378168939">+62 895-3781-68939</a> | Barista</p>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-text">
+                    <h5>E-MAIL</h5>
+                    <p><a href="mailto:Warungspasi@gmail.com">Warungspasi@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+        <!-- Formulir Kontak -->
+        <div class="col-md-6">
+            <h2 class="fw-bold">Contact Us</h2>
             <form>
-                <div class="mb-3">
-                    <label for="name" class="form-label">Nama</label>
-                    <input type="text" class="form-control" id="name" required>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <input type="text" class="form-control border-0 shadow-sm" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <input type="email" class="form-control border-0 shadow-sm" placeholder="Your Email" required>
+                    </div>
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" required>
+                    <input type="text" class="form-control border-0 shadow-sm" placeholder="Subject" required>
                 </div>
                 <div class="mb-3">
-                    <label for="message" class="form-label">Pesan</label>
-                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                    <textarea class="form-control border-0 shadow-sm" rows="4" placeholder="Message" required></textarea>
                 </div>
-                <button class="btn btn-outline-dark" type="submit">Kirim</button>
+                <button class="btn btn-danger w-100 fw-bold" type="submit">SEND MESSAGE</button>
             </form>
         </div>
-        
+    </div>
+</div>
+
+<style>
+    .map-container {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+    }
+    .map-container iframe {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+    .form-control {
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .btn-danger {
+        border-radius: 0;
+    }
+     .contact-section {
+            padding: 50px 0;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #e74c3c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #e74c3c;
+            margin-right: 15px;
+        }
+
+        .contact-text h5 {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .contact-text p {
+            margin: 0;
+            color: #555;
+        }
+
+        .contact-text a {
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-text a:hover {
+            text-decoration: underline;
+        }
+</style>
+
+
+
         <!-- Reservation Form -->
 
 <footer class="footer py-5">
@@ -111,3 +217,27 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
