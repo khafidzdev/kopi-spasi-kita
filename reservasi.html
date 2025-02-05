@@ -9,6 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+    
 
 <!-- Navbar -->
 <nav class="navbar fixed-top">
@@ -41,56 +42,57 @@
         <a href="#" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
     </div>
 </div>
-<br><br><br><br>
+<div style="text-align: center;" class="mt-5">
+    <h1 class="fw-bold">RESERVASI</h1>
+    <hr style="border: 2px solid rgb(0, 0, 0); width: 10%; margin-left: 45%;">
+</div> 
 
-
-        
-<div class="container mt-5 py-5">
+<div class="container py-5">
     <div class="row">
-        <!-- Informasi Kontak -->
-        <div class="col-md-6">
-            <h2 class="fw-bold">Hubungi Kami</h2>
-
-            <div class="contact-info">
-                <div class="contact-icon">
-                    <i class="fas fa-map-marker-alt"></i>
+            <!-- <div class="col-md-6">
+    
+                <div class="contact-info">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h5>ALAMAT</h5>
+                        <p>
+                            Jl. Waru No.11, Mintaragen, Kec. Tegal Tim., Kota Tegal, Jawa Tengah 52121</p>
+                    </div>
                 </div>
-                <div class="contact-text">
-                    <h5>ALAMAT</h5>
-                    <p>
-                        Jl. Waru No.11, Mintaragen, Kec. Tegal Tim., Kota Tegal, Jawa Tengah 52121</p>
+    
+                <div class="contact-info">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h5>WHATSAPP</h5>
+                        <p><a href="https://wa.me/62895378168939">+62 895-3781-68939</a> | Barista</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="contact-info">
-                <div class="contact-icon">
-                    <i class="fab fa-whatsapp"></i>
+    
+                <div class="contact-info">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h5>E-MAIL</h5>
+                        <p><a href="mailto:Warungspasi@gmail.com">Warungspasi@gmail.com</a></p>
+                    </div>
                 </div>
-                <div class="contact-text">
-                    <h5>WHATSAPP</h5>
-                    <p><a href="https://wa.me/62895378168939">+62 895-3781-68939</a> | Barista</p>
-                </div>
-            </div>
-
-            <div class="contact-info">
-                <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <div class="contact-text">
-                    <h5>E-MAIL</h5>
-                    <p><a href="mailto:Warungspasi@gmail.com">Warungspasi@gmail.com</a></p>
-                </div>
-            </div>
-        </div>
+            </div> -->
         <!-- Formulir Kontak -->
-        <div class="col-md-6">
-            <h2 class="fw-bold">Contact Us</h2>
+        <div class="col-md-8">
             <form>
                 <div class="row">
                     <div class=" mb-3">
                         <input type="text" class="form-control border-0 shadow-sm" placeholder="Your Name" required>
                     </div>
                 
+                </div>
+                <div class=" mb-3">
+                    <input type="email" class="form-control border-0 shadow-sm" placeholder="Your Email" required>
                 </div>
                
                 <div class="mb-3">
@@ -102,130 +104,64 @@
                 <div class="mb-3">
                     <input type="time" class="form-control border-0 shadow-sm" placeholder="" required>
                 </div>
-                <button class="btn btn-danger w-100 fw-bold" type="submit">SEND MESSAGE</button>
+                <button class="btn btn-outline-dark w-100 fw-bold" type="submit">SEND RESERVASI</button>
             </form>
         </div>
-    </div>
-</div>
-
-<style>
-    .map-container {
-        overflow: hidden;
-        padding-bottom: 56.25%;
-        position: relative;
-        height: 0;
-    }
-    .map-container iframe {
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-    }
-    .form-control {
-        border-radius: 0;
-        box-shadow: none;
-    }
-    .btn-danger {
-        border-radius: 0;
-    }
-     .contact-section {
-            padding: 50px 0;
-        }
-
-        .contact-info {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            border: 2px solid #e74c3c;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            color: #e74c3c;
-            margin-right: 15px;
-        }
-
-        .contact-text h5 {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .contact-text p {
-            margin: 0;
-            color: #555;
-        }
-
-        .contact-text a {
-            color: #e74c3c;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .contact-text a:hover {
-            text-decoration: underline;
-        }
-</style>
-
-
-
-        <!-- Reservation Form -->
-
-<footer class="footer py-5">
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-md-4">
-                <h5 class="fw-bold">WARUNG SPASI</h5>
-                <p>KOTA TEGAL <br> MINTARAGEN-TEGAL</p>
-                <button class="btn btn-outline-dark">Find us</button>
-                <p class="mt-3"><a href="#" class="text-dark">Privacy</a> <a href="#" class="text-dark ms-2">Terms</a></p>
-            </div>
-            <div class="col-md-4">
-                <h5 class="fw-bold">HOURS</h5>
-                <p>Monday — Friday <br> <strong>7.30am — 4.30pm</strong></p>
-                <p>Saturday <br> <strong>8am — 5pm</strong></p>
-                <p>Sunday <br> <strong>9am — 5pm</strong></p>
-                <p class="mt-4">&copy;Warung Spasi</p>
-            </div>
-            <div class="col-md-4">
-                <h5 class="fw-bold">CONTACT</h5>
-                <p>Email:</p>
-                <p><a href="mailto:info@Warungspasi.com" class="text-dark">info@Warungspasi.com</a></p>
-                <button class="btn btn-outline-dark">Contact us</button>
-                <div class="social-icons mt-3">
-                    <a href="#" class="text-dark me-2" title="Facebook" aria-label="Facebook">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-                    <a href="#" class="text-dark me-2" title="Instagram" aria-label="Instagram">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-                    <a href="#" class="text-dark" title="Twitter" aria-label="Twitter">
-                        <i class="bi bi-twitter"></i>
-                    </a>
+        <div class="col-md-4">
+            <div class="contact-info">
+                <div class="contact-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="contact-text">
+                    <h5>WHATSAPP</h5>
+                    <p><a href="https://wa.me/62895378168939">+62 895-3781-68939</a> | Admin</p>
                 </div>
             </div>
         </div>
     </div>
-</footer>
-
-<script src="assets/js/script.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-
-</body>
-</html>
-
-
-
-
-
-
-
+</div>
+        <!-- Reservation Form -->
+        <footer class="footer py-5">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5 class="fw-bold">WARUNG SPASI</h5>
+                        <p>KOTA TEGAL <br> MINTARAGEN-TEGAL</p>
+                        <button class="btn btn-outline-dark">Find us</button>
+                        <p class="mt-3"><a href="#" class="text-dark">Privacy</a> <a href="#" class="text-dark ms-2">Terms</a></p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="fw-bold">HOURS</h5>
+                        <p>Monday — Friday <br> <strong>7.30am — 4.30pm</strong></p>
+                        <p>Saturday <br> <strong>8am — 5pm</strong></p>
+                        <p>Sunday <br> <strong>9am — 5pm</strong></p>
+                        <p class="mt-4">&copy;Warungspasi</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="fw-bold">CONTACT</h5>
+                        <p>Email:</p>
+                        <p><a href="mailto:info@prufrockcoffee.com" class="text-dark">info@Warungspasi.com</a></p>
+                        <button class="btn btn-outline-dark">Contact us</button>
+                        <div class="social-icons mt-3">
+                            <a href="#" class="text-dark me-2" title="Facebook" aria-label="Facebook">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="#" class="text-dark me-2" title="Instagram" aria-label="Instagram">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="#" class="text-dark" title="Twitter" aria-label="Twitter">
+                                <i class="bi bi-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="assets/js/script.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+        </body>
+        </html>
+        
 
 
 
