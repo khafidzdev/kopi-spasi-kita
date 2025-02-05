@@ -9,3 +9,19 @@ document.getElementById("menuOverlay").addEventListener("click", function() {
     document.getElementById("menuOverlay").classList.remove("active");
     document.querySelector(".menu-btn").classList.remove("active");
 });
+const foodLink = document.getElementById('foodLink');
+const drinkLink = document.getElementById('drinkLink');
+const foodMenu = document.getElementById('foodMenu');
+const drinkMenu = document.getElementById('drinkMenu');
+
+foodLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    foodMenu.style.display = 'block';
+    drinkMenu.style.display = 'none';
+});
+
+drinkLink.addEventListener('click', function(e) {
+    e.preventDefault();
+    foodMenu.style.display = 'none';
+    drinkMenu.style.display = 'block';
+});
