@@ -370,6 +370,66 @@ h2 {
   display: none;
 }
 
+.map-container {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+.map-container iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.form-control {
+  border-radius: 0;
+  box-shadow: none;
+}
+.btn-danger {
+  border-radius: 0;
+}
+.contact-section {
+      padding: 50px 0;
+  }
 
+  .contact-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+  }
+
+  .contact-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: #585656;
+      margin-right: 15px;
+  }
+
+  .contact-text h5 {
+      font-weight: bold;
+      margin-bottom: 5px;
+  }
+
+  .contact-text p {
+      margin: 0;
+      color: #585656;
+  }
+
+  .contact-text a {
+      color: #585656;
+      text-decoration: none;
+      font-weight: bold;
+  }
+
+  .contact-text a:hover {
+      text-decoration: underline;
+  }
 
 
