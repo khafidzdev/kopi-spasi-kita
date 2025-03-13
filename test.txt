@@ -1,0 +1,438 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+.container {
+  max-width: 1100px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.card img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.card {
+  text-align: left;
+  padding: 10px;
+}
+
+.no-scroll {
+  overflow: hidden !important;
+  height: 100vh;
+}
+
+.navbar {
+  background-color: white; /* Memastikan transparansi */
+  padding: 10px 20px;
+  position: relative; /* Agar navbar tetap berada di atas elemen lain */
+  z-index: 1000; /* Memastikan navbar berada di atas elemen lain */
+}
+
+
+
+/* Navbar Image */
+.navbar-brand img {
+  height: 30px;
+  margin-left: 20px;
+}
+
+/* Tombol Hamburger */
+.menu-btn {
+  width: 35px;
+  height: 25px; /* Kurangi tinggi total */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Pastikan semua garis terpusat */
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 1001; 
+  position: relative;
+  margin-right: 20px;
+}
+
+.menu-btn span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: rgb(0, 0, 0);
+  border-radius: 2px;
+  transition: all 0.4s ease-in-out;
+  margin: 2px 0; /* Mengurangi jarak antar garis */
+}
+
+/* Efek Hamburger ke X */
+.menu-btn.active span {
+  background: rgb(255, 255, 255); /* Warna putih saat aktif */
+}
+.menu-btn.active span:nth-child(1) {
+  transform: translateY(3px) rotate(45deg);
+}
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-btn.active span:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+/* Menu Overlay Sepertiga Layar */
+.overlay {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Memastikan menu mulai dari luar layar */
+  width: 75%; /* Ukuran overlay untuk mobile */
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: flex-start; /* Menyusun elemen mulai dari atas */
+  justify-content: flex-start; /* Rata kiri */
+  flex-direction: column;
+  z-index: 999;
+  padding-top: 40px; /* Memberikan ruang di atas */
+  opacity: 0;
+  visibility: hidden;
+  transition: right 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
+}
+.separator {
+  border: 0;
+  border-top: 1px solid #ffffff; /* Garis pemisah horizontal */
+  margin: 10px 0; /* Menambahkan jarak atas dan bawah */
+}
+/* Saat Menu Aktif */
+.overlay.active {
+  right: 0; /* Geser masuk ke layar */
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Link dalam Overlay */
+.overlay a {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding-left: 30px; /* Memberikan sedikit ruang kiri */
+  transition: 0.3s;
+}
+
+.overlay a:hover {
+  color: #ff7f7f;
+}
+
+/* Video Section */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Memastikan video memenuhi layar */
+  overflow: hidden;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Agar video tetap di belakang teks */
+}
+
+/* Teks di tengah video */
+.video-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Menempatkan teks tepat di tengah */
+  color: white;
+  text-align: center;
+  z-index: 1; /* Menjaga teks berada di atas video */
+}
+
+/* Animasi ketik teks */
+.video-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: .15em solid white; /* Simulasi cursor */
+  width: 0;
+  animation: typing 4s steps(30) 1s 1 normal both, blink-caret .75s step-end infinite;
+}
+
+/* Animasi typing */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Animasi blink-caret */
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Social Media di bagian bawah */
+.social-media-overlay {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.social-media-overlay a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.social-media-overlay i {
+  transition: transform 0.3s ease;
+}
+
+.social-media-overlay i:hover {
+  transform: scale(1.1);
+}
+
+/* Media Query untuk Mobile */
+@media (max-width: 768px) {
+  /* Ukuran link overlay */
+  .overlay a {
+    font-size: 1.25rem;
+    width: 35%;
+
+    }
+    .navbar-brand img{
+      height: 20px;
+    }
+    .overlay {
+      padding-top: 100px; /* Sesuaikan sesuai kebutuhan */
+      width: 50%;
+  }
+  /* Social Media */
+  .social-media-overlay {
+      bottom: 10px;
+      gap: 2px; /* Mengurangi jarak antar ikon di mobile */
+      justify-content: center; /* Menyusun ikon di tengah */
+  }
+
+  .social-media-overlay a i {
+    font-size: 1.25rem;
+  }
+}
+
+/* Media Query untuk Desktop */
+@media (min-width: 769px) {
+  /* Menu Overlay untuk desktop lebih sempit */
+  .overlay {
+    width: 35%; /* Overlay lebih sempit untuk desktop */
+    padding-top: 85px; /* Ruang lebih kecil di atas */
+  }
+
+  /* Mengurangi ukuran link dan memberi jarak lebih besar */
+  .overlay a {
+    font-size: 1.8rem;
+  }
+}
+.gr{
+  border:none;
+  border-top : 1px  solid #ccc;
+  margin: 20px 0;
+}
+.footer {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.footer .btn {
+  border: 1px solid #000;
+  padding: 8px 20px;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  -webkit-border-radius: 0;
+}
+
+::-webkit-scrollbar:hover {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #868686;
+  -webkit-border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+  cursor: pointer;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+}
+
+.menu-img {
+  width: 250px;  /* Ukuran gambar */
+  height: 200px;
+  margin-right: 15px; /* Beri jarak dengan teks */
+}
+
+.menu-text {
+  flex: 1;  /* Agar teks memenuhi ruang yang tersedia */
+}
+
+@media (max-width: 768px) {
+  .col {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .menu-img {
+      margin-bottom: 10px;
+  }
+}
+
+.tabs {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  margin: 0 15px;
+  display: inline-block;
+}
+
+.tabs:hover {
+  color: #000000;
+}
+
+.tabs::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.tabs:hover::after {
+  background-color: #000000;
+}
+
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-tabs a:last-child {
+  border-right: none;
+}
+
+#drinkMenu {
+  display: none;
+}
+
+.map-container {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+.map-container iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.form-control {
+  border-radius: 0;
+  box-shadow: none;
+}
+.btn-danger {
+  border-radius: 0;
+}
+.contact-section {
+      padding: 50px 0;
+  }
+
+  .contact-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+  }
+
+  .contact-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: #585656;
+      margin-right: 15px;
+  }
+
+  .contact-text h5 {
+      font-weight: bold;
+      margin-bottom: 5px;
+  }
+
+  .contact-text p {
+      margin: 0;
+      color: #585656;
+  }
+
+  .contact-text a {
+      color: #585656;
+      text-decoration: none;
+      font-weight: bold;
+  }
+
+  .contact-text a:hover {
+      text-decoration: underline;
+  }
+
+ */
