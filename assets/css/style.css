@@ -46,7 +46,7 @@ p {
 
 /* Navbar Image */
 .navbar-brand img {
-  height: 60px;
+  height: 30px;
   margin-left: 20px;
 }
 
@@ -432,4 +432,7 @@ h2 {
       text-decoration: underline;
   }
 
-
+  .footer-brand img {
+    height: 25px;
+    margin-left: 20px;
+  }
