@@ -36,7 +36,7 @@ p {
 }
 
 .navbar {
-  background-color: transparent !important; /* Memastikan transparansi */
+  background-color:white; /* Memastikan transparansi */
   padding: 10px 20px;
   position: relative; /* Agar navbar tetap berada di atas elemen lain */
   z-index: 1000; /* Memastikan navbar berada di atas elemen lain */
@@ -239,9 +239,7 @@ video {
   .social-media-overlay a i {
     font-size: 1.25rem;
   }
-  .navbar-brand img{
-    height: 15px;
-  }
+ 
 }
 
 /* Media Query untuk Desktop */
@@ -327,6 +325,12 @@ h2 {
 
   .menu-img {
       margin-bottom: 10px;
+  }
+  .navbar-brand img{
+    height: 20px;
+  }
+  .title{
+    margin: 15% !important;
   }
 }
 
