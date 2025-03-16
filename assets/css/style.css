@@ -1,27 +1,25 @@
 
- /* Navbar */
  .navbar {
-  transition: background-color 0.3s ease-in-out;
-  background: transparent;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;  background: transparent;
   padding: 15px 20px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 900; 
 }
 .navbar.scrolled {
   background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo */
 .logo {
   height: 40px;
   transition: 0.3s;
 }
 @media (max-width: 768px) {
   .logo {
-      height: 30px; /* Ukuran lebih kecil di mobile */
+      height: 30px; 
   }
   .overlay {
     
@@ -30,10 +28,9 @@
   }
 }
 
-/* Responsive untuk layar sangat kecil (HP kecil) */
 @media (max-width: 480px) {
   .logo {
-      height: 25px; /* Ukuran lebih kecil di HP kecil */
+      height: 25px; 
   }
   .overlay {
     
@@ -42,44 +39,46 @@
   }
 }
 
-/* Tombol Hamburger */
 .menu-btn {
-  width: 35px;
-  height: 25px;
+  width: 40px;
+  height: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   cursor: pointer;
   background: none;
   border: none;
-  z-index: 1001;
+  position: fixed; 
+  right: 35px; 
+  z-index: 9999 !important; 
 }
+
+
 .menu-btn span {
   display: block;
   width: 100%;
-  height: 3px;
+  height: 2px; 
   background: white;
   transition: all 0.4s ease-in-out;
 }
-.menu-btn.active span {
-  background: white;
-}
+
 .menu-btn.active span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-.menu-btn.active span:nth-child(2) {
-  opacity: 0;
-}
-.menu-btn.active span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(9px) rotate(45deg);
 }
 
-/* Ubah warna hamburger saat discroll */
+.menu-btn.active span:nth-child(2) {
+  opacity: 0; 
+}
+
+.menu-btn.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
 .navbar.scrolled .menu-btn span {
   background: black;
 }
 
-/* Menu Overlay */
 .overlay {
   position: fixed;
   top: 0;
@@ -89,24 +88,27 @@
   background: rgba(0, 0, 0, 0.9);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start; 
+  justify-content: flex-start; 
+  padding-top: 80px; 
+  padding-left: 20px; 
   transition: right 0.5s ease-in-out;
-  z-index: 999;
-  align-items: flex-start; /* Rata kiri */
-padding-left: 30px; /* Tambahkan padding agar tidak terlalu mepet */
+  z-index: 600; 
+  align-items: flex-start;
+padding-left: 30px; 
 }
 .overlay.active {
   right: 0;
 }
 .overlay a {
-color: white;
-font-size: 20px;
-text-decoration: none;
-margin: 10px 0;
-transition: 0.3s;
-align-self: flex-start;
-position: relative; /* Agar garis bawah bisa mengikuti elemen */
-padding-bottom: 5px; /* Tambahkan jarak untuk garis bawah */
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  margin: 5px 0; 
+  transition: 0.3s;
+  align-self: flex-start; 
+  position: relative;
+  padding-bottom: 5px;
 }
 
 .overlay a::after {
@@ -122,12 +124,11 @@ transition: width 0.3s ease-in-out;
 
 .overlay a:hover::after,
 .overlay a.active::after {
-width: 100%; /* Garis bawah muncul saat hover atau active */
+width: 100%;
 }     .overlay a:hover {
   color: #fcb040;
 }
 
-/* Video Container */
 .video-container {
   position: relative;
   width: 100%;
@@ -154,11 +155,10 @@ width: 100%; /* Garis bawah muncul saat hover atau active */
       width: 70%;
   }
 }
- /* Hero Section */
  .hero {
   position: relative;
   width: 100%;
-  height: 70vh;
+  height: 65vh;
   background: url('/assets/img/kopispasi.jpg') no-repeat center center/cover;
   display: flex;
   align-items: center;
@@ -166,27 +166,23 @@ width: 100%; /* Garis bawah muncul saat hover atau active */
   text-align: center;
 }
 
-/* Kontainer teks */
 .hero-content {
   position: absolute;
   color: white;
 }
 
-/* Judul */
 .hero-content h1 {
   font-size: 3rem;
   font-weight: bold;
   text-transform: uppercase;
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8); /* Bayangan agar teks lebih jelas */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8); 
 }
 
-/* Deskripsi */
 .hero-content p {
   font-size: 1.2rem;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-/* Konten setelah hero */
 .content {
   padding: 50px;
   text-align: center;
@@ -205,19 +201,15 @@ width: 100%; /* Garis bawah muncul saat hover atau active */
   text-decoration: none;
 }
 
-
-
   .footer-brand img {
     height: 25px;
     margin-left: 20px;
   }
-/* Style untuk judul MENU */
 .title {
   text-align: center;
   margin: 5%;
 }
 
-/* Style untuk garis bawah judul */
 .title hr {
   border: 2px solid black;
   width: 10%;
@@ -225,7 +217,6 @@ width: 100%; /* Garis bawah muncul saat hover atau active */
   margin-right: auto;
 }
 
-/* Style untuk tab navigasi menu */
 .menu-tabs {
   text-align: center;
   margin-bottom: 20px;
@@ -234,7 +225,7 @@ width: 100%; /* Garis bawah muncul saat hover atau active */
 .menu-tabs .tabs {
   text-decoration: none;
   color: black;
-  font-size: 18px;
+  font-size: 2rem;
   font-weight: bold;
   padding: 10px;
   transition: 0.3s;
@@ -244,26 +235,89 @@ width: 100%; /* Garis bawah muncul saat hover atau active */
   color: #d9534f;
 }
 
-/* Style untuk gambar menu */
 .menu-img {
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 10px;
   margin-right: 15px;
 }
 
-/* Style untuk teks menu */
 .menu-text {
   flex-grow: 1;
 }
 
-/* Style untuk rating */
 .rating i {
   font-size: 16px;
 }
 
-/* Hide menu sections by default */
 #foodMenu, #drinkMenu {
   display: none;
+}
+.contact-section {
+      padding: 50px 0;
+  }
+
+  .contact-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+  }
+
+  .contact-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: #585656;
+      margin-right: 15px;
+  }
+
+  .contact-text h5 {
+      font-weight: bold;
+      margin-bottom: 5px;
+  }
+
+  .contact-text p {
+      margin: 0;
+      color: #585656;
+  }
+
+  .contact-text a {
+      color: #585656;
+      text-decoration: none;
+      font-weight: bold;
+  }
+
+  .contact-text a:hover {
+      text-decoration: underline;
+  }
+
+  .footer-brand img {
+    height: 25px;
+    margin-left: 20px;
+  }
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  -webkit-border-radius: 0;
+}
+
+::-webkit-scrollbar:hover {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ca6200;
+  -webkit-border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+  background: #f07706;
+  cursor: pointer;
 }

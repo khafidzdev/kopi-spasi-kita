@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.querySelector(".navbar");
     const menuBtn = document.getElementById("menuBtn");
     const menuOverlay = document.getElementById("menuOverlay");
+    const closeBtn = document.getElementById("closeBtn"); // Tombol close
     const logo = document.getElementById("logo");
 
     // Navbar scroll effect
@@ -22,6 +23,12 @@ document.addEventListener("DOMContentLoaded", function () {
         menuBtn.classList.toggle("active");
     });
 
+    // Tutup overlay saat tombol close ditekan
+    closeBtn.addEventListener("click", function () {
+        menuOverlay.classList.remove("active");
+        menuBtn.classList.remove("active");
+    });
+
     // Klik di luar overlay untuk menutup menu
     document.addEventListener("click", function (event) {
         if (!menuOverlay.contains(event.target) && !menuBtn.contains(event.target)) {
@@ -35,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         event.stopPropagation();
     });
 });
+
 document.addEventListener("DOMContentLoaded", function () {
     let foodMenu = document.getElementById("foodMenu");
     let drinkMenu = document.getElementById("drinkMenu");
