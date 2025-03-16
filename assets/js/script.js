@@ -1,27 +1,60 @@
-document.getElementById("menuBtn").addEventListener("click", function() {
-    //document.body.classList.toggle("no-scroll");//
-    document.getElementById("menuOverlay").classList.toggle("active");
-    document.querySelector(".menu-btn").classList.toggle("active");
-});
+document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector(".navbar");
+    const menuBtn = document.getElementById("menuBtn");
+    const menuOverlay = document.getElementById("menuOverlay");
+    const logo = document.getElementById("logo");
 
-document.getElementById("menuOverlay").addEventListener("click", function() {
-    //document.body.classList.remove("no-scroll");//
-    document.getElementById("menuOverlay").classList.remove("active");
-    document.querySelector(".menu-btn").classList.remove("active");
-});
-const foodLink = document.getElementById('foodLink');
-const drinkLink = document.getElementById('drinkLink');
-const foodMenu = document.getElementById('foodMenu');
-const drinkMenu = document.getElementById('drinkMenu');
+    // Navbar scroll effect
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+            logo.src = logo.getAttribute("data-dark-logo");
+        } else {
+            navbar.classList.remove("scrolled");
+            logo.src = logo.getAttribute("data-light-logo");
+        }
+    });
 
-foodLink.addEventListener('click', function(e) {
-    e.preventDefault();
-    foodMenu.style.display = 'block';
-    drinkMenu.style.display = 'none';
-});
+    // Toggle menu
+    menuBtn.addEventListener("click", function (event) {
+        event.stopPropagation();
+        menuOverlay.classList.toggle("active");
+        menuBtn.classList.toggle("active");
+    });
 
-drinkLink.addEventListener('click', function(e) {
-    e.preventDefault();
-    foodMenu.style.display = 'none';
-    drinkMenu.style.display = 'block';
+    // Klik di luar overlay untuk menutup menu
+    document.addEventListener("click", function (event) {
+        if (!menuOverlay.contains(event.target) && !menuBtn.contains(event.target)) {
+            menuOverlay.classList.remove("active");
+            menuBtn.classList.remove("active");
+        }
+    });
+
+    // Mencegah overlay tertutup saat di klik di dalamnya
+    menuOverlay.addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    let foodMenu = document.getElementById("foodMenu");
+    let drinkMenu = document.getElementById("drinkMenu");
+    let foodLink = document.getElementById("foodLink");
+    let drinkLink = document.getElementById("drinkLink");
+
+    // Tampilkan food menu secara default
+    foodMenu.style.display = "block";
+
+    // Event listener untuk food tab
+    foodLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        foodMenu.style.display = "block";
+        drinkMenu.style.display = "none";
+    });
+
+    // Event listener untuk drink tab
+    drinkLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        foodMenu.style.display = "none";
+        drinkMenu.style.display = "block";
+    });
 });

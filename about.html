@@ -3,36 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spasi Kopi</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>The Jago Story</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-        <style>
-            .img-fluid{
-                width: 450px;
-                height: 300px;
-            }
-        </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 <body>
-
 <!-- Navbar -->
-<nav class="navbar fixed-top">
-    <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="assets/img/kopi(spasi)kita hitam.png" alt="Warung Spasi Logo" class="me-2">
+<nav class="navbar">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <a class="navbar-brand" href="#">
+            <img src="assets/img/kopi(spasi)kita.png" class="logo" id="logo"
+                 data-light-logo="assets/img/kopi(spasi)kita.png" 
+                 data-dark-logo="assets/img/kopi(spasi)kita hitam.png">
         </a>
-        
-        <button class="menu-btn btn-light" id="menuBtn" title="Menu" aria-label="Menu">
+        <button class="menu-btn" id="menuBtn">
             <span></span>
             <span></span>
             <span></span>
         </button>
-        
     </div>
 </nav>
-
 
 <!-- Menu Overlay -->
 <div class="overlay" id="menuOverlay">
@@ -40,81 +32,60 @@
     <a href="about.html">ABOUT</a>
     <a href="menu.html">MENU</a>
     <a href="contact.html">CONTACT</a>
-        <a href="reservasi.html">RESERVASI</a>
-    <!-- Ikon Sosial Media di bagian bawah -->
-    <div class="social-media-overlay">
-        <a href="#" title="Facebook" aria-label="Facebook">
-            <i class="fab fa-facebook"></i>
-        </a>
-        <a href="#" title="Twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-
-        <a href="#" title="Instagram" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
-        
-    </div>
+    <a href="reservasi.html">RESERVASI</a>
 </div>
-
-
-
-<div style="text-align: center; margin: 5%;" class="title" >
-    <h1 class="fw-bold">ABOUT</h1>
-    <hr style="border: 2px solid rgb(0, 0, 0); width: 10%; margin-left: 45%;">
-</div> 
-<div class="container my-5  " >
-    <div class="row" >
-       
-        <div class="col-md-6 mt-3">
-            <img src="assets/img/kopispasi.jpg" alt="Cafe Interior" class="img-fluid " style="border: 0;">
-        </div>
-        <div class="col-md-6 mt-3">
-            <h4 class="fw-bold">WHO WE ARE</h4>
-            <p>
-Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, consectetur 
-accusantium. Sunt asperiores molestiae, praesentium harum iusto laudantium
- quos provident nemo quis dolor? Suscipit in id expedita aliquam fuga et.            </p>
-
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>The spasi<span style="color: orangered;">(kopi)</span>kita</h1>
+            <p>Making great coffee accessible and affordable, one neighborhood at a time.</p>
         </div>
     </div>
-</div>
-<footer class="footer py-5">
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-md-4">
-                <a class="footer-brand">
-                    <img src="assets/img/kopi(spasi)kita hitam.png" alt="Warung Spasi Logo" class="me-2">
-                </a>
-                                <p>KOTA TEGAL <br> MINTARAGEN-TEGAL</p>
-                <button class="btn btn-outline-dark">Find us</button>
-            </div>
-            <div class="col-md-4">
-                <h5 class="fw-bold">HOURS</h5>
-                <p>𝙉𝙞𝙠𝙢𝙖𝙩 𝙏𝙖𝙣𝙥𝙖 𝙎𝙮𝙖𝙧𝙖𝙩 <br> <strong>𝙎𝙀𝙏𝙄𝘼𝙋 𝙃𝘼𝙍𝙄 • 17.00 - 01.00</strong></p>
-            </div>
-            <div class="col-md-4">
-                <h5 class="fw-bold">CONTACT</h5>
-                <p>Email:</p>
-                <p><a href="mailto:info@prufrockcoffee.com" class="text-dark">info@Warungspasi.com</a></p>
-                <button class="btn btn-outline-dark">Contact us</button>
-                <div class="social-icons mt-3">
-                    <a href="#" class="text-dark me-2" title="Facebook" aria-label="Facebook">
-                        <i class="bi bi-facebook"></i>
+
+    <!-- Konten setelah hero -->
+    <div class="content">
+        <p>
+            Nothing is more Indonesian than a great cup of coffee. This archipelago produces some of the best coffees 
+            that you can find in the world. However, most Indonesians don’t get to experience that great product for themselves. 
+            Instead, instant coffees are the go-to, dominating the market at 90% of coffee consumed. 
+            To have that great cup of joe, you’ll have to pay a premium.
+
+        </p>
+    </div>
+    <footer class="footer py-5">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <a class="footer-brand">
+                        <img src="assets/img/kopi(spasi)kita hitam.png" alt="Warung Spasi Logo" class="me-2">
                     </a>
-                    <a href="#" class="text-dark me-2" title="Instagram" aria-label="Instagram">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-                    <a href="#" class="text-dark" title="Twitter" aria-label="Twitter">
-                        <i class="bi bi-twitter"></i>
-                    </a>
+                                    <p>KOTA TEGAL <br> MINTARAGEN-TEGAL</p>
+                    <button class="btn btn-outline-dark">Find us</button>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold">HOURS</h5>
+                    <p>𝙉𝙞𝙠𝙢𝙖𝙩 𝙏𝙖𝙣𝙥𝙖 𝙎𝙮𝙖𝙧𝙖𝙩 <br> <strong>𝙎𝙀𝙏𝙄𝘼𝙋 𝙃𝘼𝙍𝙄 • 17.00 - 01.00</strong></p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold">CONTACT</h5>
+                    <p>Email:</p>
+                    <p><a href="mailto:info@prufrockcoffee.com" class="text-dark">info@Warungspasi.com</a></p>
+                    <button class="btn btn-outline-dark">Contact us</button>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="text-dark me-2" title="Facebook" aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="text-dark me-2" title="Instagram" aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="text-dark" title="Twitter" aria-label="Twitter">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
-
+    </footer>
 <script src="assets/js/script.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-
-
 </body>
 </html>
