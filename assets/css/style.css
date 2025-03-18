@@ -155,49 +155,32 @@ width: 100%;
       width: 70%;
   }
 }
- /* Hero Section */
 .hero {
   position: relative;
-  width: 100vw; /* Lebar penuh sesuai viewport */
-  height: 60vh; /* Tinggi 60% dari viewport */
+  width: 100vw;  /* Lebar penuh layar */
+  height: 60vh;  /* Tinggi 60% dari layar */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  overflow: hidden; /* Menghindari scroll horizontal */
+  overflow: hidden;
+  background-color: black; /* Tambahkan sementara untuk cek */
 }
 
-/* Gambar Background */
+/* Pastikan gambar full width dan tidak terpotong */
 .hero-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw; /* Pastikan gambar memenuhi seluruh lebar layar */
-  height: 70vh; /* Sesuai dengan tinggi container */
-  object-fit: cover; /* Pastikan gambar tetap proporsional */
-  z-index: 10; /* Mengatur gambar di belakang teks */
+  width: 100vw;  /* Lebar penuh */
+  height: 60vh;  /* Tinggi 60vh */
+  object-fit: cover; /* Menyesuaikan ukuran gambar tanpa distorsi */
+  display: block; /* Pastikan gambar tidak hidden */
 }
 
-/* Konten di Atas Gambar */
+/* Konten teks di atas gambar */
 .hero-content {
-  position: relative;
+  position: absolute;
   color: white;
   text-align: center;
   padding: 20px;
-  z-index: 30;
-}
-
-/* Gaya Teks */
-.hero-content h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8); 
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .content {
