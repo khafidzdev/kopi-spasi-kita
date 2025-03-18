@@ -1,7 +1,4 @@
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-}
+
  .navbar {
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;  background: transparent;
   padding: 15px 20px;
@@ -158,39 +155,43 @@ width: 100%;
       width: 70%;
   }
 }
+ /* Hero Section */
 .hero {
   position: relative;
-  width: 100%;
-  height: 65vh;
+  width: 100vw; /* Lebar penuh sesuai viewport */
+  height: 60vh; /* Tinggi 60% dari viewport */
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  overflow: hidden;
+  overflow: hidden; /* Menghindari scroll horizontal */
 }
 
-.title {
-  position: relative;
-  color: white;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-}
-
+/* Gambar Background */
 .hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 100;
+  width: 100vw; /* Pastikan gambar memenuhi seluruh lebar layar */
+  height: 70vh; /* Sesuai dengan tinggi container */
+  object-fit: cover; /* Pastikan gambar tetap proporsional */
+  z-index: -1; /* Mengatur gambar di belakang teks */
 }
 
+/* Konten di Atas Gambar */
+.hero-content {
+  position: relative;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Gaya Teks */
 .hero-content h1 {
   font-size: 3rem;
   font-weight: bold;
   text-transform: uppercase;
   text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8); 
-  z-index: 200;
 }
 
 .hero-content p {
