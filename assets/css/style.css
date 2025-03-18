@@ -175,7 +175,7 @@ width: 100%;
   width: 100vw; /* Pastikan gambar memenuhi seluruh lebar layar */
   height: 70vh; /* Sesuai dengan tinggi container */
   object-fit: cover; /* Pastikan gambar tetap proporsional */
-  z-index: -1; /* Mengatur gambar di belakang teks */
+  z-index: 10; /* Mengatur gambar di belakang teks */
 }
 
 /* Konten di Atas Gambar */
@@ -184,6 +184,7 @@ width: 100%;
   color: white;
   text-align: center;
   padding: 20px;
+  z-index: 30;
 }
 
 /* Gaya Teks */
