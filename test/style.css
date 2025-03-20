@@ -86,19 +86,39 @@ html, body {
 }
 
 
-        .overlay-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 200;
-        }
+.overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+    background-image: url('/assets/img/kopispasi.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.overlay-menu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.877); /* Gelap transparan */
+    z-index: 1; /* Pastikan overlay tetap di atas gambar */
+}
+
+/* Agar teks tetap terlihat di atas overlay */
+.overlay-menu * {
+    position: relative;
+    z-index: 2; /* Pastikan teks/konten tetap terlihat */
+}
+
 
         .overlay-menu.active {
             display: flex;
@@ -107,14 +127,32 @@ html, body {
 
         .overlay-menu a {
             color: white;
-            font-size: 2rem;
+            font-size: 20px;
             text-decoration: none;
-            margin: 10px 0;
-        }
-
-        .overlay-menu a:hover {
+            margin: 5px 0; 
+            transition: 0.3s;
+            position: relative;
+            padding-bottom: 5px;
+            font-weight: bold;
+          }
+          
+          .overlay-menu a::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 0%;
+          height: 2px;
+          background-color: #fcb040;
+          transition: width 0.3s ease-in-out;
+          }
+          
+          .overlay-menu a:hover::after,
+          .overlay-menu a.active::after {
+          width: 100%;
+          }     .overlay a:hover {
             color: #fcb040;
-        }
+          } 
 
         /* Animasi fade in */
         @keyframes fadeIn {

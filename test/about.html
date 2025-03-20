@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kopi(spasi)kita - about</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     
 </head>
@@ -13,7 +14,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top ">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#"  data-aos="fade-right">
             <img src="/assets/img/kopi(spasi)kita.png" class="logo" id="logo"
                  data-light-logo="/assets/img/kopi(spasi)kita.png" 
                  data-dark-logo="/assets/img/kopi(spasi)kita hitam.png">
@@ -29,11 +30,11 @@
         <!-- Menu biasa untuk desktop -->
         <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
-                <li class="nav-item"><a class="nav-link" href="menu.html">MENU</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
-                <li class="nav-item"><a class="nav-link" href="reservasi.html">RESERVASI</a></li>
+                <li class="nav-item" data-aos="zoom-in"><a class="nav-link" href="index.html">HOME</a></li>
+                <li class="nav-item" data-aos="zoom-in"><a class="nav-link" href="about.html">ABOUT</a></li>
+                <li class="nav-item" data-aos="zoom-in"><a class="nav-link" href="menu.html">MENU</a></li>
+                <li class="nav-item" data-aos="zoom-in"><a class="nav-link" href="contact.html">CONTACT</a></li>
+                <li class="nav-item" data-aos="zoom-in"><a class="nav-link" href="reservasi.html">RESERVASI</a></li>
             </ul>
         </div>
     </div>
@@ -41,7 +42,7 @@
 
 <!-- Overlay Menu (Hanya untuk Mobile) -->
 <div class="overlay-menu d-lg-none" id="overlayMenu">
-    <a href="index.html">HOME</a>
+    <a href="index.html" >HOME</a>
     <a href="about.html">ABOUT</a>
     <a href="menu.html">MENU</a>
     <a href="contact.html">CONTACT</a>
@@ -105,5 +106,9 @@
         </div>
     </footer>
 <script src="script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
 </body>
 </html>

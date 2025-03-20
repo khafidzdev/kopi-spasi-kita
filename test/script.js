@@ -89,3 +89,16 @@ document.querySelectorAll(".overlay-menu a").forEach(link => {
         menuToggle.classList.remove("active");
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const navItems = document.querySelectorAll(".navbar-nav .nav-item");
+
+    navItems.forEach(item => {
+        item.addEventListener("touchstart", function () {
+            item.classList.add("hover-effect");
+
+            setTimeout(() => {
+                item.classList.remove("hover-effect");
+            }, 500); // Efek hilang setelah 500ms
+        });
+    });
+});
