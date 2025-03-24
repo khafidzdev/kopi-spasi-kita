@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 24, 2025 at 06:07 PM
+-- Generation Time: Mar 24, 2025 at 06:24 PM
 -- Server version: 8.0.30
 -- PHP Version: 7.2.32
 
@@ -42,7 +42,7 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `username`, `email`, `password`, `role`, `created_at`) VALUES
 (2, 'khafidzzzzz', 'admin@example.com', '202cb962ac59075b964b07152d234b70', 'admin', '2025-03-23 14:00:58'),
-(3, 'khafidz', 'admin@email.com', '0192023a7bbd73250516f069df18b500', 'admin', '2025-03-24 16:57:11');
+(3, 'admin', 'admin@email.com', 'e10adc3949ba59abbe56e057f20f883e', 'admin', '2025-03-24 16:57:11');
 
 -- --------------------------------------------------------
 
