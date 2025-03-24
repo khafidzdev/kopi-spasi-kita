@@ -2,7 +2,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_menu extends CI_Model {
-
+    public function count_all()
+    {
+        return $this->db->count_all('menu');
+    }
+    
     public function get_by_category($kategori)
     {
         $this->db->where('kategori', $kategori);

@@ -20,5 +20,10 @@ class M_testi extends CI_Model {
         $this->db->where('id', $id);
         return $this->db->delete('testimoni');
     }
+    public function count_all()
+{
+    return $this->db->count_all('testimoni');
+}
+
 }
 ?>

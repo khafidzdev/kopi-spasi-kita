@@ -12,6 +12,9 @@ class Admin extends CI_Controller {
         $this->load->model('M_testi');
         $this->load->model('M_about');
         $this->load->model('M_menu');
+        $this->load->model('M_team');
+        $this->load->model('M_contact');
+        $this->load->model('M_login_admin');
 
         if (!$this->session->userdata('log_in_admin')) {
             redirect('admin');
@@ -20,13 +23,48 @@ class Admin extends CI_Controller {
 
     public function main()
     {
-        $this->_load_view('admin/main');
+        $data['total_menu'] = $this->M_menu->count_all();
+        $data['total_testimoni'] = $this->M_testi->count_all();
+        $data['total_tim'] = $this->M_team->count_all();
+        $data['total_pesan'] = $this->M_contact->count_all();
+        $this->_load_view('admin/main', $data);
+    }
+    public function user()
+{
+    $data['admin'] = $this->db->get_where('admin', ['id' => $this->session->userdata('id')])->row();
+    $this->_load_view('admin/user', $data);
+}
+
+public function update_credentials()
+{
+    $id = $this->session->userdata('id');
+    $username = $this->input->post('username', true);
+    $password = $this->input->post('password', true);
+
+    $data = ['username' => $username];
+    if (!empty($password)) {
+        $data['password'] = md5($password); 
+    }
+    if ($this->M_login_admin->update_admin($id, $data)) {
+        $this->session->set_flashdata('success', 'Username & Password berhasil diperbarui.');
+    } else {
+        $this->session->set_flashdata('error', 'Gagal memperbarui data.');
     }
 
+    redirect('admin/user');
+}
+
+    private function _load_view($view, $data = [])
+    {
+        $this->load->view('admin/header');
+        $this->load->view('admin/sidebar');
+        $this->load->view('admin/topbar');
+        $this->load->view($view, $data);
+        $this->load->view('admin/footer');
+    }
     public function menu()
     {
         $action = $this->input->post('action');
-
         if ($action == 'tambah') {
             return $this->tambah();
         } elseif ($action == 'update') {
@@ -34,21 +72,35 @@ class Admin extends CI_Controller {
         } elseif ($action == 'hapus') {
             return $this->hapus();
         }
-
         $data['menu'] = $this->M_menu->get_all();
         $this->_load_view('admin/menu', $data);
     }
 
     private function tambah()
     {
-        $gambar = $this->_upload_gambar('gambar', 'menu');
         $data = [
             'nama'      => $this->input->post('nama'),
             'kategori'  => $this->input->post('kategori'),
             'deskripsi' => $this->input->post('deskripsi'),
-            'harga'     => $this->input->post('harga'),
-            'gambar'    => $gambar
+            'harga'     => $this->input->post('harga')
         ];
+
+        if (!empty($_FILES['gambar']['name'])) {
+            $config['upload_path']   = './uploads/menu/';
+            $config['allowed_types'] = '*';
+            $config['max_size']      = 10240;
+            
+            $this->load->library('upload');
+            $this->upload->initialize($config); 
+        
+            if ($this->upload->do_upload('gambar')) {
+                $data['gambar'] = $this->upload->data('file_name');
+            } else {
+                echo $this->upload->display_errors(); 
+                exit;
+            }
+        }
+        
 
         $this->M_menu->insert($data);
         $this->session->set_flashdata('success', 'Menu berhasil ditambahkan!');
@@ -58,28 +110,44 @@ class Admin extends CI_Controller {
     private function update()
     {
         $id = $this->input->post('id');
-        $gambar = $this->_upload_gambar('gambar', 'menu', $this->input->post('gambar_lama'));
-
         $data = [
             'nama'      => $this->input->post('nama'),
             'kategori'  => $this->input->post('kategori'),
             'deskripsi' => $this->input->post('deskripsi'),
-            'harga'     => $this->input->post('harga'),
-            'gambar'    => $gambar
+            'harga'     => $this->input->post('harga')
         ];
+
+        if (!empty($_FILES['gambar']['name'])) {
+            $config['upload_path']   = './uploads/menu/';
+            $config['allowed_types'] = '*';
+            $config['max_size']      = 10240;
+            
+            $this->load->library('upload');
+            $this->upload->initialize($config);
+        
+            if ($this->upload->do_upload('gambar')) {
+                $data['gambar'] = $this->upload->data('file_name');
+            } else {
+                echo $this->upload->display_errors(); 
+                exit;
+            }
+        }
+        
 
         $this->M_menu->update($id, $data);
         $this->session->set_flashdata('success', 'Menu berhasil diperbarui!');
         redirect('admin/menu');
     }
-
-    private function hapus()
-    {
+    public function delete_menu() {
         $id = $this->input->post('id');
-        $this->M_menu->delete($id);
-        $this->session->set_flashdata('success', 'Menu berhasil dihapus!');
-        redirect('admin/menu');
+        if ($id) {
+            $this->db->delete('menu', ['id' => $id]); 
+            echo json_encode(['success' => true]);
+        } else {
+            echo json_encode(['success' => false]);
+        }
     }
+    
 
     public function about()
     {
@@ -90,38 +158,40 @@ class Admin extends CI_Controller {
     public function update_about()
     {
         $data = [
-            'about_img'    => $this->_upload_gambar('about_img', 'about', $this->input->post('about_img_lama')),
             'about_desk'   => $this->input->post('about_desk'),
-            'ourstory_img' => $this->_upload_gambar('ourstory_img', 'about', $this->input->post('ourstory_img_lama')),
             'ourstory_desk'=> $this->input->post('ourstory_desk')
         ];
+
+        if (!empty($_FILES['about_img']['name'])) {
+            $config['upload_path']   = './uploads/about/';
+            $config['allowed_types'] = '*';
+            $config['max_size']      = 10240;
+            
+            $this->load->library('upload');
+            $this->upload->initialize($config); 
+        
+            if ($this->upload->do_upload('about_img')) {
+                $data['about_img'] = $this->upload->data('file_name');
+            }
+        }
+        
+        if (!empty($_FILES['ourstory_img']['name'])) {
+            $config['upload_path']   = './uploads/about/';
+            $config['allowed_types'] = '*';
+            $config['max_size']      = 10240;
+            
+            $this->upload->initialize($config); 
+        
+            if ($this->upload->do_upload('ourstory_img')) {
+                $data['ourstory_img'] = $this->upload->data('file_name');
+            }
+        }
+        
 
         $this->M_about->update($data);
         redirect('admin/about');
     }
 
-    private function _upload_gambar($field, $folder, $old_file = null)
-    {
-        if (!empty($_FILES[$field]['name'])) {
-            $config = [
-                'upload_path'   => "./uploads/$folder/",
-                'allowed_types' => 'jpg|jpeg|png',
-                'max_size'      => 10240,
-                'overwrite'     => true
-            ];
-
-            $this->load->library('upload', $config);
-
-            if ($old_file && file_exists("./uploads/$folder/$old_file")) {
-                unlink("./uploads/$folder/$old_file");
-            }
-
-            if ($this->upload->do_upload($field)) {
-                return $this->upload->data('file_name');
-            }
-        }
-        return $old_file;
-    }
 
     public function testi()
     {
@@ -182,14 +252,87 @@ class Admin extends CI_Controller {
         $data['setting'] = $this->M_setting->get_setting();
         $this->_load_view('admin/setting', $data);
     }
-
-    private function _load_view($view, $data = [])
+    public function team()
     {
-        $this->load->view('admin/header');
-        $this->load->view('admin/sidebar');
-        $this->load->view('admin/topbar');
-        $this->load->view($view, $data);
-        $this->load->view('admin/footer');
+        $data['team'] = $this->M_team->get_all();
+        $this->_load_view('admin/team', $data);
+    }
+
+    public function add_team()
+    {
+        $config['upload_path']   = './uploads/team/';
+        $config['allowed_types'] = 'jpg|jpeg|png';
+        $config['max_size']      = 10240;
+        $this->upload->initialize($config);
+
+        $data = [
+            'nama'  => $this->input->post('nama'),
+            'peran' => $this->input->post('peran')
+        ];
+
+        if ($this->upload->do_upload('gambar')) {
+            $data['gambar'] = $this->upload->data('file_name');
+        }
+
+        $this->M_team->insert($data);
+        $this->session->set_flashdata('success', 'Anggota tim berhasil ditambahkan!');
+        redirect('admin/team');
+    }
+
+    public function edit_team()
+    {
+        $id = $this->input->post('id');
+        $team = $this->M_team->getById($id);
+        echo json_encode($team);
+    }
+
+    public function update_team()
+    {
+        $id = $this->input->post('id');
+        $data = [
+            'nama'  => $this->input->post('nama'),
+            'peran' => $this->input->post('peran')
+        ];
+
+        if (!empty($_FILES['gambar']['name'])) {
+            $config['upload_path']   = './uploads/team/';
+            $config['allowed_types'] = 'jpg|jpeg|png';
+            $config['max_size']      = 10240;
+            $this->upload->initialize($config);
+
+            if ($this->upload->do_upload('gambar')) {
+                $data['gambar'] = $this->upload->data('file_name');
+            }
+        }
+
+        $this->M_team->update($id, $data);
+        $this->session->set_flashdata('success', 'Anggota tim berhasil diperbarui!');
+        redirect('admin/team');
+    }
+
+    public function delete_team($id)
+    {
+        $this->M_team->delete($id);
+        $this->session->set_flashdata('success', 'Anggota tim berhasil dihapus!');
+        redirect('admin/team');
+    }
+
+    public function contact() {
+        $data['contacts'] = $this->M_contact->get_all();
+
+        $this->_load_view('admin/contact', $data);
+    }
+
+    public function update_status() {
+        $id = $this->input->post('id');
+        $status = $this->input->post('status');
+        $this->M_contact->update_status($id, $status);
+        redirect('admin/contact');
+    }
+
+    public function delete($id) {
+        $this->M_contact->delete($id);
+        redirect('admin/contact');
     }
 }
 ?>

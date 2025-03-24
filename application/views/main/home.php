@@ -46,16 +46,16 @@
         <h2 class="steps-title">Pesan Dalam 3 langkah</h2>
         <ol class="steps-list">
             <li>
-                <h3>1. Choose your location</h3>
-                <p>Our Jagoans will come to you based on your chosen location</p>
+                <h3>1. Pergi Ke kopi<span style="color:orangered;">(spasi)</span>kita</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur quasi </p>
             </li>
             <li>
-                <h3>2. Select from coffees or teas</h3>
-                <p>Choose your go-to drinks that start at only IDR 8K</p>
+                <h3>2. Pilih Menu Favorit anda</h3>
+                <p>omnis ut dolores eum numquam illum quidem cumque!.</p>
             </li>
             <li>
-                <h3>3. Easily pay and wait for your Jagoan to arrive</h3>
-                <p>Pay with GoPay or OVO and your Jagoan will be there within 15 minutes</p>
+                <h3>3. Nikmati Nikmatnya Tanpa Syarat</h3>
+                <p> Sapiente accusamus ipsa doloribus voluptatum vel obcaecati unde ullam quos architecto in.</p>
             </li>
         </ol>
     </div>

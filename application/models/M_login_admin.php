@@ -22,4 +22,10 @@ class M_login_admin extends CI_Model
         }
         return null;
     }
+    public function update_admin($id, $data)
+{
+    $this->db->where('id', $id);
+    return $this->db->update('admin', $data);
+}
+
 }

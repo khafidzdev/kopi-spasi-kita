@@ -9,6 +9,8 @@ class Main extends CI_Controller {
         $this->load->model('M_about'); 
         $this->load->model('M_testi');
         $this->load->model('M_setting'); 
+        $this->load->model('M_team'); 
+        $this->load->model('M_contact'); 
     
        
     }
@@ -24,6 +26,7 @@ class Main extends CI_Controller {
     public function about() {
         $data['setting'] = $this->M_setting->get_setting();
         $data['about'] = $this->M_about->get();
+        $data['team'] = $this->M_team->get_all();
         $data['title'] = "About - kopi(spasi)kita"; 
         $this->load->view('main/header',$data);
         $this->load->view('main/navbar');
@@ -43,7 +46,18 @@ class Main extends CI_Controller {
     }
     
 
-    public function kontak() {
+    public function contact() {
+        if ($this->input->post()) {
+            $data = [
+                'nama' => $this->input->post('nama'),
+                'email' => $this->input->post('email'),
+                'subject' => $this->input->post('subject'),
+                'message' => $this->input->post('message'),
+                'status' => 'Pending'
+            ];
+            $this->M_contact->insert($data);
+            redirect('contact');
+        }
         $data['setting'] = $this->M_setting->get_setting();
         $data['title'] = "Contact - kopi(spasi)kita"; 
         $data['setting'] = $this->M_setting->get_setting();
@@ -52,7 +66,17 @@ class Main extends CI_Controller {
         $this->load->view('main/contact',$data);
         $this->load->view('main/footer',$data);
     }
-
+    public function send() {
+        $data = [
+            'nama' => $this->input->post('nama', TRUE),
+            'email' => $this->input->post('email', TRUE),
+            'subject' => $this->input->post('subject', TRUE),
+            'message' => $this->input->post('message', TRUE),
+            'status' => 'Pending'
+        ];
+        $this->M_contact->insert($data);
+        redirect('contact'); 
+    }
     public function reservasi() {
         $data['setting'] = $this->M_setting->get_setting();
         $data['setting'] = $this->M_setting->get_setting();

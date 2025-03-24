@@ -30,7 +30,7 @@ $autoload['packages'] = array();
 | -------------------------------------------------------------------
 | Menambahkan database dan session agar langsung aktif.
 */
-$autoload['libraries'] = array('database', 'session');
+$autoload['libraries'] = array('database', 'session','upload');
 
 /*
 | -------------------------------------------------------------------

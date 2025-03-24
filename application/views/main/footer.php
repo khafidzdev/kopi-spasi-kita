@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="footer py-5">
+<footer class="footer py-5 bg-gray">
     <div class="container text-center">
         <div class="row">
             <!-- Logo & Lokasi -->
@@ -12,7 +12,7 @@
 
             <!-- Jam Operasional -->
             <div class="col-md-4 mb-4">
-                <h5 class="fw-bold text-warning">HOURS</h5>
+                <h5 class="fw-bold ">HOURS</h5>
                 <p>𝙉𝙞𝙠𝙢𝙖𝙩 𝙏𝙖𝙣𝙥𝙖 𝙎𝙮𝙖𝙧𝙖𝙩 <br> 
                     <strong>𝙎𝙀𝙏𝙄𝘼𝙋 𝙃𝘼𝙍𝙄 • 17.00 - 01.00</strong>
                 </p>
@@ -20,14 +20,14 @@
 
             <!-- Kontak & Media Sosial -->
             <div class="col-md-4 mb-4">
-                <h5 class="fw-bold text-warning">CONTACT</h5>
+                <h5 class="fw-bold ">CONTACT</h5>
 
 
                 <div class="social-icons mt-3">
-                    <a href="<?= $setting->facebook; ?>" target="_blank" class="social-link" title="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="<?= $setting->whatsapp; ?>" target="_blank" class="social-link" title="Facebook"><i class="bi bi-whatsapp"></i></a>
                     <a href="<?= $setting->instagram; ?>" target="_blank" class="social-link" title="Instagram"><i class="bi bi-instagram"></i></a>
-                    <a href="<?= $setting->twitter; ?>" target="_blank" class="social-link" title="Twitter"><i class="bi bi-twitter"></i></a>
-                    <a href="<?= $setting->youtube; ?>" target="_blank" class="social-link" title="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="<?= $setting->alamat; ?>" target="_blank" class="social-link" title="Twitter"><i class="bi bi-geo-alt"></i></a>
+                    <a href="<?= $setting->email; ?>" target="_blank" class="social-link" title="YouTube"><i class="bi bi-envelope"></i></a>
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
     }
 
     .social-icons a:hover {
-        color: #fcb040;
+        color: gray;
         transform: scale(1.2);
     }
 

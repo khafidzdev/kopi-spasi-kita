@@ -54,13 +54,17 @@ $route['admin'] = 'login_admin';
 $route['admin/main'] = 'admin/main'; 
 $route['about'] = 'main/about';
 $route['menu'] = 'main/menu';
-$route['kontak'] = 'main/kontak';
+$route['contact'] = 'main/contact';
 $route['reservasi'] = 'main/reservasi';
 $route['404_override'] = 'main/not_found';
 $route['admin/menu'] = 'admin/menu'; 
 $route['admin/about'] = 'admin/about'; 
 $route['admin/testi'] = 'admin/testi';
 $route['admin/setting'] = 'admin/setting';
+$route['admin/team'] = 'admin/team';
+$route['admin/contact'] = 'admin/contact';
+$route['admin/user'] = 'admin/user';
+$route['admin/update_credentials'] = 'admin/update_credentials';
 
 $route['translate_uri_dashes'] = FALSE;
 

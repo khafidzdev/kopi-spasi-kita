@@ -18,7 +18,7 @@
                 <li class="nav-item"><a class="nav-link" href="<?= site_url('/'); ?>">HOME</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= site_url('about'); ?>">ABOUT</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= site_url('menu'); ?>">MENU</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?= site_url('kontak'); ?>">CONTACT</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= site_url('contact'); ?>">CONTACT</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= site_url('reservasi'); ?>">RESERVASI</a></li>
             </ul>
         </div>
@@ -30,6 +30,6 @@
     <a href="<?= site_url('/'); ?>">HOME</a>
     <a href="<?= site_url('about'); ?>">ABOUT</a>
     <a href="<?= site_url('menu'); ?>">MENU</a>
-    <a href="<?= site_url('kontak'); ?>">CONTACT</a>
+    <a href="<?= site_url('contact'); ?>">CONTACT</a>
     <a href="<?= site_url('reservasi'); ?>">RESERVASI</a>
 </div>

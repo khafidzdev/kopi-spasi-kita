@@ -1,9 +1,8 @@
-<div class="container mt-4">
-    <h2>About Management</h2>
-    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#editAboutModal">Edit About</button>
+<div class="container-fluid">
+    <h2>About</h2>
+    <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#editAboutModal"><i class="fas fa-edit"></i>Edit About</button>
 
     <div class="card p-4">
-        <!-- About Section -->
         <div class="row align-items-center mb-4">
             <div class="col-md-4 text-center">
                 <img src="<?= base_url('uploads/about/' . $about->about_img); ?>" alt="About Image" class="img-fluid rounded">
@@ -13,8 +12,6 @@
                 <p><?= $about->about_desk; ?></p>
             </div>
         </div>
-
-        <!-- Our Story Section -->
         <div class="row align-items-center">
             <div class="col-md-4 text-center">
                 <img src="<?= base_url('uploads/about/' . $about->ourstory_img); ?>" alt="Our Story Image" class="img-fluid rounded">
@@ -26,8 +23,6 @@
         </div>
     </div>
 </div>
-
-<!-- Modal Edit About -->
 <div class="modal fade" id="editAboutModal" tabindex="-1" aria-labelledby="editAboutLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -41,6 +36,8 @@
                         <label>About Image</label>
                         <input type="file" name="about_img" class="form-control">
                         <input type="hidden" name="about_img_lama" value="<?= $about->about_img; ?>">
+                        <br>
+                        <img src="<?= base_url('uploads/about/' . $about->about_img); ?>" width="100">
                     </div>
                     <div class="mb-3">
                         <label>About Description</label>
@@ -50,6 +47,8 @@
                         <label>Our Story Image</label>
                         <input type="file" name="ourstory_img" class="form-control">
                         <input type="hidden" name="ourstory_img_lama" value="<?= $about->ourstory_img; ?>">
+                        <img src="<?= base_url('uploads/about/' . $about->ourstory_img); ?>" width="100">
+
                     </div>
                     <div class="mb-3">
                         <label>Our Story Description</label>
@@ -57,8 +56,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
                 </div>
             </form>
         </div>

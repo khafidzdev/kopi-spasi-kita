@@ -16,7 +16,7 @@
                     <input type="text" id="name" class="form-control border-0 shadow-sm" placeholder="Your Name" required>
                 </div>
                 <div class="mb-3">
-                    <input type="email" id="email" class="form-control border-0 shadow-sm" placeholder="Your Email" required>
+                    <input type="email" id="email" class="form-control border-0 shadow-sm" placeholder="Your Number Phone" required>
                 </div>
                 <div class="mb-3">
                     <textarea id="message" class="form-control border-0 shadow-sm" rows="4" placeholder="Message" required></textarea>

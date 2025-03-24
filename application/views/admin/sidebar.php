@@ -41,16 +41,35 @@
 </li>
 <li class="nav-item">
     <a class="nav-link" href="<?= base_url('admin/testi'); ?>">
-        <i class="fas fa-info-circle"></i>
+        <i class="fas fa-comments"></i> 
         <span>Testimoni</span>
     </a>
 </li>
 <li class="nav-item">
     <a class="nav-link" href="<?= base_url('admin/setting'); ?>">
-        <i class="fas fa-info-circle"></i>
+        <i class="fas fa-cog"></i>
         <span>Setting</span>
     </a>
 </li>
+<li class="nav-item">
+    <a class="nav-link" href="<?= base_url('admin/team'); ?>">
+        <i class="fas fa-users"></i>
+        <span>Team</span>
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="<?= base_url('admin/contact'); ?>">
+        <i class="fas  fa-envelope"></i> 
+        <span>Contact</span>
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="<?= base_url('admin/user'); ?>">
+    <i class="fas fa-user"></i>
+    <span>User</span>
+    </a>
+</li>
+
 
 
 

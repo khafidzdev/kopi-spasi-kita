@@ -1,8 +1,7 @@
 
-<body>
-    <div class="container mt-4">
-        <h2>Pengaturan Sosial Media & Kontak</h2>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal">Edit Setting</button>
+<div class="container-fluid">
+        <h2>Setting</h2>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class="fas fa-edit"></i>Edit Setting</button>
         
         <table class="table mt-3">
             <tr><th>Instagram</th><td><?= $setting->instagram; ?></td></tr>
@@ -15,8 +14,6 @@
             <tr><th>Email</th><td><?= $setting->email; ?></td></tr>
         </table>
     </div>
-
-    <!-- Modal Edit -->
     <div class="modal fade" id="editModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -60,8 +57,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success">Simpan</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                     </div>
                 </form>
             </div>
