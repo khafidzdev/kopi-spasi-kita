@@ -1,7 +1,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="<?= base_url(); ?>" data-aos="fade-right">
+        <a class="navbar-brand" href="<?= base_url(); ?>">
             <img src="<?= base_url('assets/img/kopi(spasi)kita.png'); ?>" class="logo" id="logo"
                  data-light-logo="<?= base_url('assets/img/kopi(spasi)kita.png'); ?>" 
                  data-dark-logo="<?= base_url('assets/img/kopi(spasi)kita hitam.png'); ?>">

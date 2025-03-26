@@ -13,11 +13,11 @@
     <div class="container">
         <div class="row align-items-center">
             <!-- Gambar -->
-            <div class="col-lg-6 mb-4 mb-lg-0 position-relative" data-aos="fade-right">
+            <div class="col-lg-6 mb-4 mb-lg-0 position-relative" >
                 <img src="<?= base_url('uploads/about/' . $about->ourstory_img) ?>" alt="Our Story" class="img-fluid story-image">
             </div>
             <!-- Teks -->
-            <div class="col-lg-6" data-aos="fade-left">
+            <div class="col-lg-6" >
                 <h2 class="fw-bold section-title">Our Story</h2>
                 <p class="text-muted">
                     <?= $about->ourstory_desk; ?>
@@ -32,7 +32,7 @@
         <h2 class="testi-title">WHAT OUR CUSTOMER ARE SAYING</h2>
         <div class="testimonials-grid">
             <?php foreach ($testimoni as $t) : ?>
-                <div class="testimonial-card" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                <div class="testimonial-card">
                     <p><?= htmlspecialchars($t->pesan); ?></p>
                     <span>— <?= htmlspecialchars($t->nama); ?></span>
                 </div>

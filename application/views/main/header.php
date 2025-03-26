@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.css'); ?>">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="icon" type="image/png" href="<?= base_url('assets/img/kopi(spasi)kita.png'); ?>">
+    <link rel="icon" type="image/png" href="<?= base_url('assets/img/logo.png'); ?>">
 
 
 </head>

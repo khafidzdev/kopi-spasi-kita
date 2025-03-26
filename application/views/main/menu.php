@@ -26,20 +26,19 @@ $kategori_list = [
     'TRADITIONAL SNACKS ALL VARIAN'
 ];
 
-// Ambil data menu dari database
 $menu_items = $this->db->get('menu')->result();
 ?>
 
 <div class="container my-5">
     <?php foreach ($kategori_list as $kategori) : ?>
         <section class="my-5">
-            <h2 class="fw-bold text-uppercase" data-aos="fade-right"><?= $kategori; ?></h2>
+            <h2 class="fw-bold text-uppercase" ><?= $kategori; ?></h2>
             <hr>
             <div class="row text-center">
                 <?php foreach ($menu_items as $item) : ?>
                     <?php if ($item->kategori == $kategori) : ?>
                         <div class="col-md-6">
-                            <div class="menu-item" data-aos="flip-up">
+                            <div class="menu-item" >
                                 <img src="<?= base_url('uploads/menu/' . $item->gambar); ?>" alt="<?= $item->nama; ?>" class="img-fluid">
                                 <h3 class="fw-bold mt-3"><?= strtoupper($item->nama); ?></h3>
                                 <p><?= $item->deskripsi; ?></p>
