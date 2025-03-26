@@ -27,12 +27,22 @@ class Admin extends CI_Controller {
         $data['total_testimoni'] = $this->M_testi->count_all();
         $data['total_tim'] = $this->M_team->count_all();
         $data['total_pesan'] = $this->M_contact->count_all();
-        $this->_load_view('admin/main', $data);
+        $this->load->view('admin/header');
+        $this->load->view('admin/sidebar');
+        $this->load->view('admin/topbar');
+        $this->load->view('admin/main', $data);
+        $this->load->view('admin/footer');
+
     }
     public function user()
 {
     $data['admin'] = $this->db->get_where('admin', ['id' => $this->session->userdata('id')])->row();
-    $this->_load_view('admin/user', $data);
+    $this->load->view('admin/header');
+    $this->load->view('admin/sidebar');
+    $this->load->view('admin/topbar');
+    $this->load->view('admin/user', $data);
+    $this->load->view('admin/footer');
+
 }
 
 public function update_credentials()
@@ -54,29 +64,26 @@ public function update_credentials()
     redirect('admin/user');
 }
 
-    private function _load_view($view, $data = [])
-    {
-        $this->load->view('admin/header');
-        $this->load->view('admin/sidebar');
-        $this->load->view('admin/topbar');
-        $this->load->view($view, $data);
-        $this->load->view('admin/footer');
-    }
     public function menu()
     {
         $action = $this->input->post('action');
         if ($action == 'tambah') {
-            return $this->tambah();
+            return $this->tambah_menu();
         } elseif ($action == 'update') {
-            return $this->update();
+            return $this->edit_menu();
         } elseif ($action == 'hapus') {
-            return $this->hapus();
+            return $this->hapus_menu();
         }
         $data['menu'] = $this->M_menu->get_all();
-        $this->_load_view('admin/menu', $data);
+        $this->load->view('admin/header');
+        $this->load->view('admin/sidebar');
+        $this->load->view('admin/topbar');
+        $this->load->view('admin/menu', $data);
+        $this->load->view('admin/footer');
+
     }
 
-    private function tambah()
+    private function tambah_menu()
     {
         $data = [
             'nama'      => $this->input->post('nama'),
@@ -107,7 +114,7 @@ public function update_credentials()
         redirect('admin/menu');
     }
 
-    private function update()
+    private function edit_menu()
     {
         $id = $this->input->post('id');
         $data = [
@@ -138,7 +145,7 @@ public function update_credentials()
         $this->session->set_flashdata('success', 'Menu berhasil diperbarui!');
         redirect('admin/menu');
     }
-    public function delete_menu() {
+    public function hapus_menu() {
         $id = $this->input->post('id');
         if ($id) {
             $this->db->delete('menu', ['id' => $id]); 
@@ -152,10 +159,15 @@ public function update_credentials()
     public function about()
     {
         $data['about'] = $this->M_about->get();
-        $this->_load_view('admin/about', $data);
+        $this->load->view('admin/header');
+        $this->load->view('admin/sidebar');
+        $this->load->view('admin/topbar');
+        $this->load->view('admin/about', $data);
+
+        $this->load->view('admin/footer');
     }
 
-    public function update_about()
+    public function edit_about()
     {
         $data = [
             'about_desk'   => $this->input->post('about_desk'),
@@ -196,10 +208,14 @@ public function update_credentials()
     public function testi()
     {
         $data['testimoni'] = $this->M_testi->get_all_testimoni();
-        $this->_load_view('admin/testi', $data);
+        $this->load->view('admin/header');
+        $this->load->view('admin/sidebar');
+        $this->load->view('admin/topbar');
+        $this->load->view('admin/testi', $data);
+        $this->load->view('admin/footer');
     }
 
-    public function add_testi()
+    public function tambah_testi()
     {
         $data = [
             'nama'  => $this->input->post('nama'),
@@ -209,7 +225,7 @@ public function update_credentials()
         redirect('admin/testi');
     }
 
-    public function update_testi()
+    public function edit_testi()
     {
         $id = $this->input->post('id');
         $data = [
@@ -220,7 +236,7 @@ public function update_credentials()
         redirect('admin/testi');
     }
 
-    public function delete_testi($id)
+    public function hapus_testi($id)
     {
         $this->M_testi->delete_testimoni($id);
         redirect('admin/testi');
@@ -250,15 +266,23 @@ public function update_credentials()
         }
 
         $data['setting'] = $this->M_setting->get_setting();
-        $this->_load_view('admin/setting', $data);
+        $this->load->view('admin/header');
+        $this->load->view('admin/sidebar');
+        $this->load->view('admin/topbar');
+        $this->load->view('admin/setting', $data);
+        $this->load->view('admin/footer');
     }
     public function team()
     {
         $data['team'] = $this->M_team->get_all();
-        $this->_load_view('admin/team', $data);
+        $this->load->view('admin/header');
+        $this->load->view('admin/sidebar');
+        $this->load->view('admin/topbar');
+        $this->load->view('admin/team', $data);
+        $this->load->view('admin/footer');
     }
 
-    public function add_team()
+    public function tambah_team()
     {
         $config['upload_path']   = './uploads/team/';
         $config['allowed_types'] = 'jpg|jpeg|png';
@@ -310,7 +334,7 @@ public function update_credentials()
         redirect('admin/team');
     }
 
-    public function delete_team($id)
+    public function hapus_team($id)
     {
         $this->M_team->delete($id);
         $this->session->set_flashdata('success', 'Anggota tim berhasil dihapus!');
@@ -319,18 +343,21 @@ public function update_credentials()
 
     public function contact() {
         $data['contacts'] = $this->M_contact->get_all();
-
-        $this->_load_view('admin/contact', $data);
+        $this->load->view('admin/header');
+        $this->load->view('admin/sidebar');
+        $this->load->view('admin/topbar');
+        $this->load->view('admin/contact', $data);
+        $this->load->view('admin/footer');
     }
 
-    public function update_status() {
+    public function edit_status() {
         $id = $this->input->post('id');
         $status = $this->input->post('status');
         $this->M_contact->update_status($id, $status);
         redirect('admin/contact');
     }
 
-    public function delete($id) {
+    public function hapus($id) {
         $this->M_contact->delete($id);
         redirect('admin/contact');
     }

@@ -30,7 +30,7 @@
                 <h5 class="modal-title" id="editAboutLabel">Edit About</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?= base_url('admin/update_about'); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?= base_url('admin/edit_about'); ?>" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="mb-3">
                         <label>About Image</label>

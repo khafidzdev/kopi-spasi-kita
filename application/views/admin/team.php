@@ -67,7 +67,7 @@
 <!-- Modal Tambah -->
 <div class="modal fade" id="addModal">
     <div class="modal-dialog">
-        <form action="<?= base_url('admin/add_team'); ?>" method="post" enctype="multipart/form-data">
+        <form action="<?= base_url('admin/tambah_team'); ?>" method="post" enctype="multipart/form-data">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Tambah Anggota Tim</h5>
@@ -103,7 +103,7 @@ function confirmDelete(id) {
         cancelButtonText: "Batal"
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href = "<?= base_url('admin/delete_team/'); ?>" + id;
+            window.location.href = "<?= base_url('admin/hapus_team/'); ?>" + id;
         }
     });
 }

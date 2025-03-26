@@ -42,7 +42,7 @@
                                 <h5 class="modal-title" id="editTestiLabel">Edit Testimoni</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <form action="<?= base_url('admin/update_testi'); ?>" method="post">
+                            <form action="<?= base_url('admin/edit_testi'); ?>" method="post">
                                 <div class="modal-body">
                                     <input type="hidden" name="id" value="<?= $t->id; ?>">
                                     <div class="mb-3">
@@ -74,7 +74,7 @@
                 <h5 class="modal-title" id="addTestiLabel">Tambah Testimoni</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="<?= base_url('admin/add_testi'); ?>" method="post">
+            <form action="<?= base_url('admin/tambah_testi'); ?>" method="post">
                 <div class="modal-body">
                     <div class="mb-3">
                         <label>Nama</label>
@@ -106,7 +106,7 @@ function confirmDelete(id) {
         cancelButtonText: "Batal"
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href = "<?= base_url('admin/delete_testi/'); ?>" + id;
+            window.location.href = "<?= base_url('admin/hapus_testi/'); ?>" + id;
         }
     });
 }

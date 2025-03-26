@@ -33,7 +33,7 @@
             </tr>
             <div class="modal fade" id="statusModal<?= $c->id; ?>" tabindex="-1">
                 <div class="modal-dialog">
-                    <form method="post" action="<?= base_url('admin/update_status'); ?>">
+                    <form method="post" action="<?= base_url('admin/edit_status'); ?>">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">Ubah Status</h5>
@@ -74,7 +74,7 @@ function confirmDelete(id) {
         cancelButtonText: "Batal"
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href = "<?= base_url('admin/delete/'); ?>" + id;
+            window.location.href = "<?= base_url('admin/hapus/'); ?>" + id;
         }
     });
 }
