@@ -16,23 +16,40 @@
         }
     
     </style>
- <section class="container my-5">
-        <h2 class="fw-bold text-uppercase">Coffee</h2>
-        <hr>
-        <div class="row text-center">
-            <div class="col-md-6">
-                <div class="menu-item">
-                    <img src="<?php echo base_url('assets/img/harubiru.jpg'); ?>" alt="Jago Black Coffee" class="img-fluid">
-                    <h3 class="fw-bold mt-3">JAGO BLACK COFFEE (HOT/ICED)</h3>
-                    <p>Black coffee with 100% Indonesian Arabica coffee beans. Available in hot and cold with manual brew method.</p>
-                </div>
+<?php
+$kategori_list = [
+    'RAMUAN KOPI',
+    'KUMPULAN MOCKTAIL',
+    'SNACK',
+    'THE ONLY ONE',
+    'KLASIK',
+    'TRADITIONAL SNACKS ALL VARIAN'
+];
+
+// Ambil data menu dari database
+$menu_items = $this->db->get('menu')->result();
+?>
+
+<div class="container my-5">
+    <?php foreach ($kategori_list as $kategori) : ?>
+        <section class="my-5">
+            <h2 class="fw-bold text-uppercase" data-aos="fade-right"><?= $kategori; ?></h2>
+            <hr>
+            <div class="row text-center">
+                <?php foreach ($menu_items as $item) : ?>
+                    <?php if ($item->kategori == $kategori) : ?>
+                        <div class="col-md-6">
+                            <div class="menu-item" data-aos="flip-up">
+                                <img src="<?= base_url('uploads/menu/' . $item->gambar); ?>" alt="<?= $item->nama; ?>" class="img-fluid">
+                                <h3 class="fw-bold mt-3"><?= strtoupper($item->nama); ?></h3>
+                                <p><?= $item->deskripsi; ?></p>
+                                <p class="fw-bold">Rp <?= number_format($item->harga, 0, ',', '.'); ?></p>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             </div>
-            <div class="col-md-6">
-                <div class="menu-item">
-                    <img src="<?php echo base_url('assets/img/harubiru.jpg'); ?>" alt="Kopi Susu Jago" class="img-fluid">
-                    <h3 class="fw-bold mt-3">KOPI SUSU JAGO</h3>
-                    <p>Jago's brown sugar iced coffee.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    <?php endforeach; ?>
+</div>
+

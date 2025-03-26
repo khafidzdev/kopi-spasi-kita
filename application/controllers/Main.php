@@ -80,6 +80,7 @@ class Main extends CI_Controller {
     public function reservasi() {
         $data['setting'] = $this->M_setting->get_setting();
         $data['setting'] = $this->M_setting->get_setting();
+        $data['menu'] = $this->M_menu->get_all();
         $data['title'] = "Reservasi - kopi(spasi)kita"; 
         $this->load->view('main/header',$data);
         $this->load->view('main/navbar');

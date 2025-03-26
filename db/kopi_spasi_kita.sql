@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 24, 2025 at 06:24 PM
+-- Generation Time: Mar 26, 2025 at 04:27 PM
 -- Server version: 8.0.30
 -- PHP Version: 7.2.32
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `spasikopi`
+-- Database: `kopi(spasi)kita`
 --
 
 -- --------------------------------------------------------
@@ -76,7 +76,7 @@ INSERT INTO `contact` (`id`, `nama`, `email`, `subject`, `message`, `status`, `c
 CREATE TABLE `menu` (
   `id` int NOT NULL,
   `nama` varchar(100) NOT NULL,
-  `kategori` enum('Makanan','Minuman') NOT NULL,
+  `kategori` enum('RAMUAN KOPI','KUMPULAN MOCKTAIL','SNACK','THE ONLY ONE','KLASIK','TRADITIONAL SNACKS ALL VARIAN') NOT NULL,
   `deskripsi` text,
   `harga` int NOT NULL,
   `gambar` varchar(255) DEFAULT NULL
@@ -87,9 +87,30 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id`, `nama`, `kategori`, `deskripsi`, `harga`, `gambar`) VALUES
-(6, 'Rice Ball', 'Makanan', 'lorem', 12000, 'ck1.jpg'),
-(7, 'MerahRona', 'Minuman', 'lorem', 25000, 'ronamerah.jpg'),
-(11, 'HaruBiru', 'Minuman', 'lorem', 25000, 'harubiru3.jpg');
+(1, 'Pangeran Surya', 'RAMUAN KOPI', ' (Kopi Susu Gula Aren) ', 15000, '67e027ca85df81.jpg'),
+(2, 'GAUl', 'RAMUAN KOPI', '(Kopi Susu Butter cheese)', 17000, 'ronamerah1.jpg'),
+(3, 'LOLI', 'RAMUAN KOPI', '(Kopi Susu Tiramisu)', 17000, '67e027ca85df82.jpg'),
+(4, 'DURGUS', 'RAMUAN KOPI', '(Kopi Susu Pandan)', 15000, '67e027ca85df83.jpg'),
+(5, 'SI Burung Merak', 'KUMPULAN MOCKTAIL', '(Full Barries Coffee Mocktail) ', 17000, '67e027ca85df821.jpg'),
+(6, 'Sang Pelukis Raja ', 'KUMPULAN MOCKTAIL', '(Coldbrew Apple Super Juice) ', 17000, 'ronamerah11.jpg'),
+(7, 'Sang Kuda ', 'KUMPULAN MOCKTAIL', '(Fresh Fruit Semangka) ', 17000, '67e027ca85df822.jpg'),
+(8, 'Si Mata Hitam ', 'KUMPULAN MOCKTAIL', '(Coldbrew Raspberry Lemon Juice) ', 15000, '67e027ca85df831.jpg'),
+(9, 'Si Binatang Jalang ', 'KUMPULAN MOCKTAIL', '(Osmantus Peach Club)', 19000, '67e027ca85df8311.jpg'),
+(10, 'Gadis Desa ', 'KUMPULAN MOCKTAIL', '(Super Gingger Apple) ', 17000, '67e027ca85df8211.jpg'),
+(11, 'PISANG KACANG ', 'SNACK', '', 15000, '67e02a6d233af1.jpg'),
+(12, 'RUJAK CIRENG ', 'SNACK', '', 15000, '67e02a6d233af11.jpg'),
+(13, 'KENTANG MIX ', 'SNACK', '', 15000, '67e02a6d233af111.jpg'),
+(14, 'NASI TELOR MATASPASI ', 'THE ONLY ONE', '  ', 15000, '67e02a6d233af12.jpg'),
+(15, 'LATTE ', 'KLASIK', '', 20000, '67e027ca85df84.jpg'),
+(16, 'AMERICANO ', 'KLASIK', '', 20000, '67e027ca85df82111.jpg'),
+(17, 'CAPPUCCINO ', 'KLASIK', '', 20000, '67e027ca85df85.jpg'),
+(18, 'VGO ', 'KLASIK', '', 20000, '67e027ca85df86.jpg'),
+(19, 'MATCHA VANILA CHEESE ', 'KLASIK', '', 19000, '67e027ca85df87.jpg'),
+(20, 'MATCHA TIRAMISU ', 'KLASIK', '', 19000, '67e027ca85df88.jpg'),
+(21, 'EARL GREY ', 'KLASIK', '', 17000, '67e027ca85df811.jpg'),
+(22, 'COKLAT KACANG ', 'KLASIK', '', 17000, '67e027ca85df812.jpg'),
+(23, 'COKLAT TIRAMISU ', 'KLASIK', '', 17000, '67e027ca85df89.jpg'),
+(24, '  ONLY 5K', 'TRADITIONAL SNACKS ALL VARIAN', '', 5000, 'TE-2022-5000-depan-1200x596.webp');
 
 -- --------------------------------------------------------
 
@@ -287,7 +308,7 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `produk`

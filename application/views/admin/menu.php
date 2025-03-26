@@ -50,9 +50,14 @@
                                     <input type="text" name="nama" class="form-control" value="<?= $m->nama; ?>" required>
                                     <label>Kategori:</label>
                                     <select name="kategori" class="form-control">
-                                        <option value="Makanan" <?= ($m->kategori == 'Makanan') ? 'selected' : ''; ?>>Makanan</option>
-                                        <option value="Minuman" <?= ($m->kategori == 'Minuman') ? 'selected' : ''; ?>>Minuman</option>
-                                    </select>
+    <option value="RAMUAN KOPI" <?= ($m->kategori == 'RAMUAN KOPI') ? 'selected' : ''; ?>>RAMUAN KOPI</option>
+    <option value="KUMPULAN MOCKTAIL" <?= ($m->kategori == 'KUMPULAN MOCKTAIL') ? 'selected' : ''; ?>>KUMPULAN MOCKTAIL</option>
+    <option value="SNACK" <?= ($m->kategori == 'SNACK') ? 'selected' : ''; ?>>SNACK</option>
+    <option value="THE ONLY ONE" <?= ($m->kategori == 'THE ONLY ONE') ? 'selected' : ''; ?>>THE ONLY ONE</option>
+    <option value="KLASIK" <?= ($m->kategori == 'KLASIK') ? 'selected' : ''; ?>>KLASIK</option>
+    <option value="TRADITIONAL SNACKS ALL VARIAN" <?= ($m->kategori == 'TRADITIONAL SNACKS ALL VARIAN') ? 'selected' : ''; ?>>TRADITIONAL SNACKS ALL VARIAN</option>
+</select>
+
                                     <label>Deskripsi:</label>
                                     <textarea name="deskripsi" class="form-control"> <?= $m->deskripsi; ?> </textarea>
                                     <label>Harga:</label>
@@ -88,16 +93,20 @@
                 <input type="hidden" name="action" value="tambah">
                 <div class="modal-body">
                     <label>Nama Menu:</label>
-                    <input type="text" name="nama" class="form-control" required>
+                    <input type="text" name="nama" class="form-control" >
                     <label>Kategori:</label>
                     <select name="kategori" class="form-control">
-                        <option value="Makanan">Makanan</option>
-                        <option value="Minuman">Minuman</option>
-                    </select>
+    <option value="RAMUAN KOPI" <?= ($m->kategori == 'RAMUAN KOPI') ? 'selected' : ''; ?>>RAMUAN KOPI</option>
+    <option value="KUMPULAN MOCKTAIL" <?= ($m->kategori == 'KUMPULAN MOCKTAIL') ? 'selected' : ''; ?>>KUMPULAN MOCKTAIL</option>
+    <option value="SNACK" <?= ($m->kategori == 'SNACK') ? 'selected' : ''; ?>>SNACK</option>
+    <option value="THE ONLY ONE" <?= ($m->kategori == 'THE ONLY ONE') ? 'selected' : ''; ?>>THE ONLY ONE</option>
+    <option value="KLASIK" <?= ($m->kategori == 'KLASIK') ? 'selected' : ''; ?>>KLASIK</option>
+    <option value="TRADITIONAL SNACKS ALL VARIAN" <?= ($m->kategori == 'TRADITIONAL SNACKS ALL VARIAN') ? 'selected' : ''; ?>>TRADITIONAL SNACKS ALL VARIAN</option>
+</select>
                     <label>Deskripsi:</label>
                     <textarea name="deskripsi" class="form-control"></textarea>
                     <label>Harga:</label>
-                    <input type="number" name="harga" class="form-control" required>
+                    <input type="number" name="harga" class="form-control" 
                     <label>Gambar:</label>
                     <input type="file" name="gambar" class="form-control">
                 </div>
