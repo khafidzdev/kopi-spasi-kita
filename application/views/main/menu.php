@@ -6,52 +6,33 @@
         <hr style="border: 2px solid rgb(0, 0, 0); width: 40%; margin-left: 45%;">
     </div>
 </div>
-
-<div class="container my-5">
-    <div class="menu-tabs">
-        <a href="#foodMenu" class="tabs" id="foodLink">Food</a> |
-        <a href="#drinkMenu" class="tabs" id="drinkLink">Drink</a>
-    </div>
-
-    <!-- Food Section -->
-    <div id="foodMenu" class="mt-5">
-        <h3 class="fw-bold">Food</h3>
-        <div class="row row-cols-1 row-cols-md-2 g-4 mt-3">
-            <?php if (!empty($food_menu)): ?>
-                <?php foreach ($food_menu as $food): ?>
-                    <div class="col d-flex align-items-center">
-                        <img src="<?php echo base_url('uploads/menu/' . $food->gambar); ?>" class="menu-img" alt="<?= $food->nama; ?>">
-                        <div class="menu-text">
-                            <h5 class="fw-bold"><?= $food->nama; ?></h5>
-                            <p class="text-danger fw-bold">Rp <?= number_format($food->harga, 0, ',', '.'); ?></p>
-                            <p><?= $food->deskripsi; ?></p>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p>Menu makanan belum tersedia.</p>
-            <?php endif; ?>
+<style>
+        .menu-item {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .menu-item img {
+            width: 250px;
+        }
+    
+    </style>
+ <section class="container my-5">
+        <h2 class="fw-bold text-uppercase">Coffee</h2>
+        <hr>
+        <div class="row text-center">
+            <div class="col-md-6">
+                <div class="menu-item">
+                    <img src="<?php echo base_url('assets/img/harubiru.jpg'); ?>" alt="Jago Black Coffee" class="img-fluid">
+                    <h3 class="fw-bold mt-3">JAGO BLACK COFFEE (HOT/ICED)</h3>
+                    <p>Black coffee with 100% Indonesian Arabica coffee beans. Available in hot and cold with manual brew method.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="menu-item">
+                    <img src="<?php echo base_url('assets/img/harubiru.jpg'); ?>" alt="Kopi Susu Jago" class="img-fluid">
+                    <h3 class="fw-bold mt-3">KOPI SUSU JAGO</h3>
+                    <p>Jago's brown sugar iced coffee.</p>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <!-- Drink Section -->
-    <div id="drinkMenu" class="mt-5">
-        <h3 class="fw-bold">Drink</h3>
-        <div class="row row-cols-1 row-cols-md-2 g-4 mt-3">
-            <?php if (!empty($drink_menu)): ?>
-                <?php foreach ($drink_menu as $drink): ?>
-                    <div class="col d-flex align-items-center">
-                        <img src="<?php echo base_url('uploads/menu/' . $drink->gambar); ?>" class="menu-img" alt="<?= $drink->nama; ?>">
-                        <div class="menu-text">
-                            <h5 class="fw-bold"><?= $drink->nama; ?></h5>
-                            <p class="text-danger fw-bold">Rp <?= number_format($drink->harga, 0, ',', '.'); ?></p>
-                            <p><?= $drink->deskripsi; ?></p>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p>Menu minuman belum tersedia.</p>
-            <?php endif; ?>
-        </div>
-    </div>
-</div>
+    </section>
