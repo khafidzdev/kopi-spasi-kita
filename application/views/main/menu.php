@@ -32,7 +32,7 @@ $menu_items = $this->db->get('menu')->result();
 <div class="container my-5">
     <?php foreach ($kategori_list as $kategori) : ?>
         <section class="my-5">
-            <h2 class="fw-bold text-uppercase" ><?= $kategori; ?></h2>
+            <h1 class="fw-bold text-uppercase" ><?= $kategori; ?></h1>
             <hr>
             <div class="row text-center">
                 <?php foreach ($menu_items as $item) : ?>
