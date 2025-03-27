@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <?php foreach ($team as $t) : ?>
-                <div class="col-md-2 col-6 text-center team-member">
+                <div class="col-md-4 col-4 text-center team-member">
                     <img src="<?= base_url('uploads/team/' . $t->gambar); ?>" alt="<?= $t->nama; ?>" width="100">
                     <h5 class="team-name mt-2"><?= $t->nama; ?></h5>
                     <p class="team-role text-muted"><?= $t->peran; ?></p>
