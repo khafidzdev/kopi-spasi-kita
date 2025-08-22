@@ -77,7 +77,7 @@ $db['default'] = array(
     'hostname' => 'localhost',
     'username' => 'root', // Ganti sesuai user MySQL kamu
     'password' => '', // Ganti jika ada password
-    'database' => 'kopi(spasi)kita', // Pastikan database ini ada
+    'database' => 'kopi', // Pastikan database ini ada
     'dbdriver' => 'mysqli', // Ubah ke "mysqli"
     'dbprefix' => '',
     'pconnect' => FALSE,
@@ -92,4 +92,3 @@ $db['default'] = array(
     'failover' => array(),
     'save_queries' => TRUE
 );
-
